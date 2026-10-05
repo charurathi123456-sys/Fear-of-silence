@@ -1,0 +1,6 @@
+{
+  "name": "Quietude — Fear of Silence Editorial Journal",
+  "description": "An editorial blog and interactive reading room investigating sedatephobia, white noise reliance, conversational dread, and the modern psychology of silence.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
