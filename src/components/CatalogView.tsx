@@ -30,32 +30,53 @@ export const CatalogView: React.FC<CatalogViewProps> = ({
 }) => {
   const categories = [
     'All Folios',
-    'Clinical Anatomy',
-    'Cultural Habits',
-    'Acoustic Experiments',
-    'Philosophy & Solitude',
-    'Therapeutic Protocols',
+    'Clinical & Science',
+    'Acoustic Culture',
+    'Mind & Body',
+    'Habits & Tech',
+    'Social & Relationships',
   ];
 
   const filteredArticles = selectedCategory === 'All Folios'
     ? articles
     : articles.filter((a) => {
-        if (selectedCategory === 'Clinical Anatomy') {
-          return a.chapterCategory === 'Clinical Anatomy' || a.chapterCategory === 'Neuroscience';
+        if (selectedCategory === 'Clinical & Science') {
+          return [
+            'sedatephobia-clinical-panic',
+            'anechoic-chamber-madness',
+            'tinnitus-fear-of-silence',
+            'default-mode-network',
+            'befriending-the-void',
+          ].includes(a.id);
         }
-        if (selectedCategory === 'Cultural Habits') {
-          return a.chapterCategory === 'Cultural Habits' || a.chapterCategory === 'Technology & Dopamine';
+        if (selectedCategory === 'Acoustic Culture') {
+          return [
+            'white-noise-addiction',
+            'awkward-silence-anxiety',
+            'horror-vacui-empty-mind',
+            'silence-in-relationships-stonewalling',
+            'digital-pacifiers-infinite-scroll',
+          ].includes(a.id);
         }
-        if (selectedCategory === 'Acoustic Experiments') {
-          return a.chapterCategory === 'Acoustic Experiments' || a.chapterCategory === 'Neurological Phenomena';
+        if (selectedCategory === 'Mind & Body') {
+          return (
+            a.chapterCategory === 'Mind & Body' ||
+            a.chapterCategory === 'Brain Science' ||
+            a.chapterCategory === 'Practical Guide' ||
+            a.chapterCategory === 'Health & Ears'
+          );
         }
-        if (selectedCategory === 'Philosophy & Solitude') {
-          return a.chapterCategory === 'Philosophy & Solitude' || a.chapterCategory === 'Social Dynamics' || a.chapterCategory === 'Interpersonal Intimacy';
+        if (selectedCategory === 'Habits & Tech') {
+          return (
+            a.chapterCategory === 'Everyday Habits' ||
+            a.chapterCategory === 'Screen Habits' ||
+            a.chapterCategory === 'Philosophy of Mind'
+          );
         }
-        if (selectedCategory === 'Therapeutic Protocols') {
-          return a.chapterCategory === 'Therapeutic Protocols';
+        if (selectedCategory === 'Social & Relationships') {
+          return a.chapterCategory === 'Social Life' || a.chapterCategory === 'Love & Family';
         }
-        return a.chapterCategory === selectedCategory;
+        return a.chapterCategory.toLowerCase().includes(selectedCategory.toLowerCase());
       });
 
   const featuredArticle = articles[0]; // Folio 01
