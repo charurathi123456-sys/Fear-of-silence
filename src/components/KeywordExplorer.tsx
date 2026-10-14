@@ -40,9 +40,20 @@ export const KeywordExplorer: React.FC<KeywordExplorerProps> = ({
         <span className="text-xs uppercase tracking-widest font-mono text-[#8C8275] block mb-2">
           SEO Research & Discovery Matrix
         </span>
-        <h2 className="font-editorial text-3xl sm:text-4xl lg:text-5xl font-normal text-[#1C1917] mb-4">
+        <h1 className="font-editorial text-3xl sm:text-4xl lg:text-5xl font-normal text-[#1C1917] mb-4">
           The Language of Modern Quiet
+        </h1>
+        <h2 className="font-editorial text-2xl text-[#1C1917] mb-3">
+          How Do People Articulate Their Fear of Silence Across Search Engines?
         </h2>
+        <div className="p-4 bg-[#F6F2E9] border-l-3 border-[#936B45] rounded-r-lg my-4 text-left">
+          <span className="font-mono text-xs uppercase tracking-wider text-[#7A5C3E] font-semibold block mb-1">
+            Direct Answer
+          </span>
+          <p className="font-reading text-base text-[#292524] leading-relaxed">
+            Answer: Search engine patterns demonstrate that millions of people search for solutions to quiet anxiety, fan reliance for sleep, awkward four-second pauses, and nighttime rumination. Explore the high-intent queries and index terms below.
+          </p>
+        </div>
         <p className="font-reading text-base text-[#524B40] leading-relaxed">
           Explore how modern humans articulate their dread of silence—from clinical inquiries regarding sedatephobia to midnight searches for auditory blankets.
         </p>
@@ -72,10 +83,18 @@ export const KeywordExplorer: React.FC<KeywordExplorerProps> = ({
 
       {/* Top 10 High-Intent Search Inquiries (Google & Search Engine Patterns) */}
       <section className="mb-14">
-        <h3 className="text-xs uppercase font-mono tracking-wider text-[#8C8275] mb-4 flex items-center gap-2">
-          <Sparkles className="w-3.5 h-3.5 text-[#936B45]" />
-          <span>Top 10 Searched Questions on the Fear of Silence</span>
-        </h3>
+        <div className="mb-4">
+          <div className="flex items-center gap-2 text-xs uppercase font-mono tracking-wider text-[#8C8275] mb-1">
+            <Sparkles className="w-3.5 h-3.5 text-[#936B45]" />
+            <span>Search Engine Analysis</span>
+          </div>
+          <h2 className="font-editorial text-2xl text-[#1C1917] mb-2">
+            What Are the Top 10 Most Searched Inquiries on Sedatephobia and Quiet Panic?
+          </h2>
+          <p className="font-reading text-sm text-[#5C5346] leading-relaxed">
+            <strong className="text-[#936B45]">Answer:</strong> The ten primary search queries reflect questions about why quiet triggers panic, whether white noise is addictive, why anechoic rooms cause hallucinations, and how to stop bedtime overthinking. Click any query to read its full dedicated folio:
+          </p>
+        </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           {articles.map((article) => (
@@ -124,10 +143,16 @@ export const KeywordExplorer: React.FC<KeywordExplorerProps> = ({
 
       {/* SEO Keyword Index Cloud */}
       <section className="mb-14 p-6 sm:p-8 bg-[#F6F2E9] border border-[#E7E0D3] rounded-xl">
-        <h3 className="text-xs uppercase font-mono tracking-wider text-[#7A7062] mb-4 flex items-center gap-2">
+        <div className="flex items-center gap-2 text-xs uppercase font-mono tracking-wider text-[#7A7062] mb-1">
           <Tag className="w-3.5 h-3.5 text-[#936B45]" />
           <span>Curated Index of Core SEO Keywords</span>
-        </h3>
+        </div>
+        <h2 className="font-editorial text-2xl text-[#1C1917] mb-2">
+          Which Core SEO Keywords and Clinical Search Queries Are Indexed in This Journal?
+        </h2>
+        <p className="font-reading text-sm text-[#5C5346] mb-4 leading-relaxed">
+          <strong className="text-[#936B45]">Answer:</strong> Quietude indexes high-intent search queries spanning sedatephobia symptoms, fear of quiet rooms, white noise addiction, awkward conversational pauses, and bedtime overthinking.
+        </p>
 
         <div className="flex flex-wrap gap-2">
           {allKeywords.map((kw) => (

@@ -47,7 +47,7 @@ export function resolveRoute(rawPath: string): RouteResolution {
       path: '/home',
       title: 'Quietude — Essays on Sedatephobia & The Fear of Silence',
       description:
-        'Struggling with the fear of silence or sedatephobia? Discover the root causes of quiet anxiety, white noise reliance, and simple steps to find lasting calm now.',
+        'Overcome sedatephobia and the fear of silence. Learn why quiet rooms trigger anxiety and discover proven steps to find lasting calm.',
     };
   }
 
@@ -59,7 +59,7 @@ export function resolveRoute(rawPath: string): RouteResolution {
       path: '/clinical-science',
       title: 'Clinical & Science of Silence — Quietude',
       description:
-        'Explore the clinical neuroscience behind the fear of silence, central auditory gain, tinnitus, and anechoic chamber research. Uncover what happens to you today.',
+        'Explore the neuroscience of sedatephobia, central auditory gain, and tinnitus in silence. Uncover how quiet affects the brain.',
     };
   }
 
@@ -71,7 +71,7 @@ export function resolveRoute(rawPath: string): RouteResolution {
       path: '/acoustic-culture',
       title: 'Acoustic Culture of Modern Life — Quietude',
       description:
-        'Why is modern society addicted to background noise? Examine the cultural shift from quiet rooms to constant podcasts and box fans. Read our in-depth essay now.',
+        'Why is modern life addicted to background noise? Explore the cultural shift from quiet rooms to 24/7 podcasts, fans, and screens.',
     };
   }
 
@@ -87,7 +87,7 @@ export function resolveRoute(rawPath: string): RouteResolution {
       path: '/search-keywords',
       title: 'Search Matrix & Keywords — Quietude',
       description:
-        'Explore the most searched queries and clinical terms on the fear of silence, sedatephobia, and noise addiction. Find answers to your pressing questions today.',
+        'Browse the top searched questions and clinical terms on sedatephobia, fear of silence, and noise addiction with expert answers.',
     };
   }
 
@@ -118,7 +118,7 @@ export function resolveRoute(rawPath: string): RouteResolution {
     path: '/home',
     title: 'Quietude — Essays on Sedatephobia & The Fear of Silence',
     description:
-      'Struggling with the fear of silence or sedatephobia? Discover the root causes of quiet anxiety, white noise reliance, and simple steps to find lasting calm now.',
+      'Overcome sedatephobia and the fear of silence. Learn why quiet rooms trigger anxiety and discover proven steps to find lasting calm.',
   };
 }
 

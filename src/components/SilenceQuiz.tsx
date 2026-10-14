@@ -68,11 +68,11 @@ export const SilenceQuiz: React.FC<SilenceQuizProps> = ({ articles, onSelectArti
         <span>Self-Inquiry Assessment</span>
       </div>
 
-      <h3 className="font-editorial text-2xl text-[#1C1917] mb-2">
-        Discover Your Specific Silence Vulnerability
-      </h3>
-      <p className="font-reading text-sm text-[#5C5346] mb-6">
-        Answer 3 intuitive prompts to diagnose why silence triggers anxiety for you and receive your tailored folio reading.
+      <h2 className="font-editorial text-2xl text-[#1C1917] mb-2">
+        How Do You Identify Your Specific Triggers for Silence Anxiety?
+      </h2>
+      <p className="font-reading text-sm text-[#5C5346] mb-6 leading-relaxed">
+        <strong className="text-[#936B45]">Answer:</strong> You can pinpoint your personal silence vulnerability by observing whether quiet triggers physical sensory alarms (tinnitus gain), bedtime overthinking (Default Mode Network activation), or social rejection panic (conversational pauses). Answer these 3 quick prompts to discover your exact diagnostic match:
       </p>
 
       {!matchedArticle ? (

@@ -175,9 +175,12 @@ export const SoundSpectrumVisualizer: React.FC = () => {
             <Activity className="w-3.5 h-3.5 text-[#936B45]" />
             <span>Acoustic Oscilloscope</span>
           </div>
-          <h3 className="font-editorial text-2xl text-[#1C1917]">
-            The Decibel Spectrum of Silence vs. Noise
-          </h3>
+          <h2 className="font-editorial text-2xl text-[#1C1917] mb-2">
+            Which Decibel Levels Trigger Quiet Panic Versus Calming Relief?
+          </h2>
+          <p className="font-reading text-xs sm:text-sm text-[#5C5346] max-w-2xl leading-relaxed">
+            <strong className="text-[#936B45]">Answer:</strong> Acoustic environments below 20 dB (such as anechoic chambers and quiet bedrooms) trigger central auditory gain and heightened sensory vigilance, whereas ambient sound floors between 40 and 50 dB (brown noise, rainfall) provide a calming auditory blanket that masks intrusive rumination.
+          </p>
         </div>
 
         <button

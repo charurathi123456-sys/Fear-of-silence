@@ -52,12 +52,20 @@ export default function App() {
     // Ensure browser URL is clean (no '#' symbol, unique /home for landing page)
     pushCleanUrl(resolution.path);
 
+    const qaItems = resolution.article
+      ? resolution.article.sections.map((s) => ({
+          question: s.heading,
+          answer: s.paragraphs[0],
+        }))
+      : undefined;
+
     // Update SEO tags
     updatePageSeo({
       title: resolution.title,
       description: resolution.description,
       path: resolution.path,
       type: resolution.view === 'reader' ? 'article' : 'website',
+      qaItems,
     });
   }, []);
 
@@ -85,11 +93,17 @@ export default function App() {
 
     pushCleanUrl(cleanPath);
 
+    const qaItems = article.sections.map((s) => ({
+      question: s.heading,
+      answer: s.paragraphs[0],
+    }));
+
     updatePageSeo({
       title: `${article.title} — Quietude`,
       description: article.metaDescription || article.excerpt,
       path: cleanPath,
       type: 'article',
+      qaItems,
     });
 
     window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -100,10 +114,10 @@ export default function App() {
     setActiveView('catalog');
     pushCleanUrl(ROUTE_PATHS.HOME);
 
+    const res = resolveRoute(ROUTE_PATHS.HOME);
     updatePageSeo({
-      title: 'Quietude — Essays on Sedatephobia & The Fear of Silence',
-      description:
-        'Struggling with the fear of silence or sedatephobia? Discover the root causes of quiet anxiety, white noise reliance, and simple steps to find lasting calm now.',
+      title: res.title,
+      description: res.description,
       path: ROUTE_PATHS.HOME,
       type: 'website',
     });
@@ -119,37 +133,22 @@ export default function App() {
     }
 
     let targetPath: string = ROUTE_PATHS.HOME;
-    let title = 'Quietude — Essays on Sedatephobia & The Fear of Silence';
-    let description =
-      'Struggling with the fear of silence or sedatephobia? Discover the root causes of quiet anxiety, white noise reliance, and simple steps to find lasting calm now.';
-
     if (view === 'catalog') {
       targetPath = ROUTE_PATHS.HOME;
-      title = 'Quietude — Essays on Sedatephobia & The Fear of Silence';
-      description =
-        'Struggling with the fear of silence or sedatephobia? Discover the root causes of quiet anxiety, white noise reliance, and simple steps to find lasting calm now.';
     } else if (view === 'clinical') {
       targetPath = ROUTE_PATHS.CLINICAL_SCIENCE;
-      title = 'Clinical & Science of Silence — Quietude';
-      description =
-        'Explore the clinical neuroscience behind the fear of silence, central auditory gain, tinnitus, and anechoic chamber research. Uncover what happens to you today.';
     } else if (view === 'acoustic') {
       targetPath = ROUTE_PATHS.ACOUSTIC_CULTURE;
-      title = 'Acoustic Culture of Modern Life — Quietude';
-      description =
-        'Why is modern society addicted to background noise? Examine the cultural shift from quiet rooms to constant podcasts and box fans. Read our in-depth essay now.';
     } else if (view === 'keywords') {
       targetPath = ROUTE_PATHS.SEARCH_KEYWORDS;
-      title = 'Search Matrix & Keywords — Quietude';
-      description =
-        'Explore the most searched queries and clinical terms on the fear of silence, sedatephobia, and noise addiction. Find answers to your pressing questions today.';
     }
 
+    const res = resolveRoute(targetPath);
     pushCleanUrl(targetPath);
 
     updatePageSeo({
-      title,
-      description,
+      title: res.title,
+      description: res.description,
       path: targetPath,
       type: 'website',
     });

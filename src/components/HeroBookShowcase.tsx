@@ -46,7 +46,17 @@ export const HeroBookShowcase: React.FC<HeroBookShowcaseProps> = ({
             The Unspoken Void: Why Silence Terrifies Modern Minds
           </h1>
 
-          <p className="font-reading text-base sm:text-lg text-[#4A443B] leading-relaxed max-w-xl">
+          <h2 className="font-editorial text-xl sm:text-2xl text-[#292524] font-medium leading-snug">
+            Why Does the Absence of Sound Trigger Anxiety in Modern Minds?
+          </h2>
+
+          <div className="p-3.5 bg-[#FAF8F5]/90 border-l-3 border-[#936B45] rounded-r-lg text-left">
+            <p className="font-reading text-sm text-[#332E27] leading-relaxed">
+              <strong className="text-[#936B45]">Answer:</strong> Sudden quiet strips away ambient sensory buffers, forcing the autonomic nervous system to heighten vigilance while the brain’s Default Mode Network flares into rapid introspection and memory review.
+            </p>
+          </div>
+
+          <p className="font-reading text-sm sm:text-base text-[#4A443B] leading-relaxed max-w-xl">
             A curatorial collection of 10 illustrated folios examining why the absence of noise unleashes physiological panic, why our bedrooms run on synthetic white noise, and how to reclaim unhurried stillness.
           </p>
 

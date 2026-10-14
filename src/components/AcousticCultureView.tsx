@@ -42,7 +42,20 @@ export const AcousticCultureView: React.FC<AcousticCultureViewProps> = ({
           Acoustic Culture of Modern Life
         </h1>
 
-        <p className="font-reading text-lg text-[#524B40] leading-relaxed mb-6">
+        <h2 className="font-editorial text-2xl sm:text-3xl text-[#1C1917] mb-3">
+          Why Has Modern Society Become Addicted to 24/7 Background Noise?
+        </h2>
+
+        <div className="p-4 sm:p-5 bg-[#F6F2E9] border-l-3 border-[#936B45] rounded-r-lg my-4">
+          <span className="font-mono text-xs uppercase tracking-wider text-[#7A5C3E] font-semibold block mb-1">
+            Direct Answer
+          </span>
+          <p className="font-reading text-base text-[#292524] leading-relaxed">
+            Answer: Modern society is addicted to background noise because continuous auditory stimulation functions as an emotional shield, buffering individuals from existential introspection, loneliness, and the discomfort of unhurried stillness.
+          </p>
+        </div>
+
+        <p className="font-reading text-base text-[#524B40] leading-relaxed mb-6">
           How did an entire civilization become dependent on 24/7 background audio? From white noise machines and bedtime podcast queues to four-second conversational panics and the phone reflex, explore the cultural architecture of escaping silence.
         </p>
 
@@ -69,18 +82,27 @@ export const AcousticCultureView: React.FC<AcousticCultureViewProps> = ({
 
       {/* Cultural Habits Analysis Box */}
       <section className="mb-14 p-6 sm:p-8 bg-[#F5EFE4] border border-[#DDD5C5] rounded-2xl book-shadow">
-        <h2 className="font-editorial text-2xl text-[#1C1917] mb-3">
-          The 3 Modern Auditory Shields
+        <h2 className="font-editorial text-2xl sm:text-3xl text-[#1C1917] mb-3">
+          What Are the Three Primary Auditory Shields We Use to Escape Silence?
         </h2>
+        <div className="p-3.5 bg-[#EDE5D5] border-l-3 border-[#7A5C3E] rounded-r-lg mb-6 text-left">
+          <span className="font-mono text-xs uppercase tracking-wider text-[#7A5C3E] font-semibold block mb-1">
+            Direct Answer
+          </span>
+          <p className="font-reading text-sm text-[#292524] leading-relaxed">
+            Answer: We insulate ourselves through three cultural mechanisms: synthetic noise blankets (fans/podcasts), conversational pause intolerance (dreading the 4-second gap), and digital pocket pacifiers (immediate phone checks in quiet moments).
+          </p>
+        </div>
+
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 pt-2">
           <div className="space-y-2">
             <div className="flex items-center gap-2 text-xs font-mono uppercase text-[#7A5C3E]">
               <Radio className="w-4 h-4 text-[#936B45]" />
               <span>1. The Noise Blanket</span>
             </div>
-            <h3 className="font-editorial text-lg text-[#1C1917]">Synthetic Bedside Companions</h3>
+            <h3 className="font-editorial text-lg text-[#1C1917]">How Do Bedside Auditory Blankets Work?</h3>
             <p className="font-reading text-xs text-[#524B40] leading-relaxed">
-              Box fans, YouTube rain loops, and crime shows act like synthetic roommates, creating decibels that mask our deepest nighttime worries.
+              <strong className="text-[#936B45]">Answer:</strong> Box fans, YouTube rain loops, and familiar sitcoms act like synthetic roommates, providing steady decibels that suppress nighttime vulnerability and thoughts.
             </p>
           </div>
 
@@ -89,9 +111,9 @@ export const AcousticCultureView: React.FC<AcousticCultureViewProps> = ({
               <MessageCircle className="w-4 h-4 text-[#936B45]" />
               <span>2. The Social Pause</span>
             </div>
-            <h3 className="font-editorial text-lg text-[#1C1917]">Tribal Rejection Fear</h3>
+            <h3 className="font-editorial text-lg text-[#1C1917]">Why Does a 4-Second Pause Feel Threatening?</h3>
             <p className="font-reading text-xs text-[#524B40] leading-relaxed">
-              In social settings, pauses longer than 200 milliseconds trigger subconscious alarms that we are being judged or disconnected from the clan.
+              <strong className="text-[#936B45]">Answer:</strong> In social settings, verbal pauses exceeding 200 milliseconds trigger subconscious fears of rejection, judgment, or social isolation.
             </p>
           </div>
 
@@ -100,9 +122,9 @@ export const AcousticCultureView: React.FC<AcousticCultureViewProps> = ({
               <Smartphone className="w-4 h-4 text-[#936B45]" />
               <span>3. The Pocket Pacifier</span>
             </div>
-            <h3 className="font-editorial text-lg text-[#1C1917]">The Elevator Screen Reach</h3>
+            <h3 className="font-editorial text-lg text-[#1C1917]">Why Do We Reach for Phones When Idle?</h3>
             <p className="font-reading text-xs text-[#524B40] leading-relaxed">
-              Any gap longer than five seconds triggers a compulsive reach for the smartphone screen to prevent encountering the unbuffered self.
+              <strong className="text-[#936B45]">Answer:</strong> Any gap longer than five seconds provokes a compulsive reflex to touch glass screens, delivering quick dopamine to avoid encountering the quiet self.
             </p>
           </div>
         </div>
@@ -118,13 +140,13 @@ export const AcousticCultureView: React.FC<AcousticCultureViewProps> = ({
 
       {/* Articles Grid for Acoustic Culture */}
       <section className="mb-16">
-        <div className="flex items-center justify-between mb-8 pb-3 border-b border-[#EAE3D6]">
-          <h2 className="font-editorial text-2xl sm:text-3xl text-[#1C1917]">
-            Acoustic Culture Folios ({acousticArticles.length})
+        <div className="mb-8 pb-3 border-b border-[#EAE3D6]">
+          <h2 className="font-editorial text-2xl sm:text-3xl text-[#1C1917] mb-2">
+            Which Cultural Folios Examine White Noise and Conversational Pauses?
           </h2>
-          <span className="text-xs font-mono text-[#8C8275]">
-            Essays on Modern Noise Dependency
-          </span>
+          <p className="font-reading text-sm text-[#5C5346] leading-relaxed">
+            <strong className="text-[#936B45]">Answer:</strong> Folios 02, 03, 06, 07, and 08 investigate the sociology of white noise machines, four-second conversational panics, horror vacui, and digital pacifier behavior.
+          </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
@@ -144,11 +166,11 @@ export const AcousticCultureView: React.FC<AcousticCultureViewProps> = ({
       {/* Bottom Practice Invitation */}
       <section className="p-8 bg-[#FAF8F5] border border-[#DDD5C5] rounded-2xl flex flex-col sm:flex-row items-center justify-between gap-6 book-shadow">
         <div className="space-y-1 text-center sm:text-left">
-          <h3 className="font-editorial text-2xl text-[#1C1917]">
-            Dare to Put the Earbuds Away?
-          </h3>
-          <p className="font-reading text-sm text-[#5C5346]">
-            Take a 60-second unbuffered breath right now and give your attention a break from the noise.
+          <h2 className="font-editorial text-2xl text-[#1C1917]">
+            How Do You Break Free from Constant Auditory Overstimulation?
+          </h2>
+          <p className="font-reading text-sm text-[#5C5346] leading-relaxed">
+            <strong className="text-[#936B45]">Answer:</strong> Breaking free begins with intentional daily silence fasting—leaving earbuds behind during short commutes, taking unhurried morning tea breaks, and embracing brief companionable pauses.
           </p>
         </div>
         <button

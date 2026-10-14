@@ -5,6 +5,7 @@ interface PageSeoConfig {
   description: string;
   path: string;
   type?: 'website' | 'article';
+  qaItems?: { question: string; answer: string }[];
 }
 
 export function updatePageSeo(config: PageSeoConfig) {
@@ -62,6 +63,33 @@ export function updatePageSeo(config: PageSeoConfig) {
 
     const twitterDesc = document.querySelector('meta[name="twitter:description"]');
     if (twitterDesc) twitterDesc.setAttribute('content', config.description);
+
+    // 6. Update or Inject AEO Schema (FAQPage / Q&A for Answer Engine Optimization)
+    let aeoSchemaScript = document.getElementById('aeo-qa-schema') as HTMLScriptElement | null;
+    if (config.qaItems && config.qaItems.length > 0) {
+      const faqSchema = {
+        '@context': 'https://schema.org',
+        '@type': 'FAQPage',
+        mainEntity: config.qaItems.map((item) => ({
+          '@type': 'Question',
+          name: item.question,
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: item.answer,
+          },
+        })),
+      };
+
+      if (!aeoSchemaScript) {
+        aeoSchemaScript = document.createElement('script');
+        aeoSchemaScript.id = 'aeo-qa-schema';
+        aeoSchemaScript.type = 'application/ld+json';
+        document.head.appendChild(aeoSchemaScript);
+      }
+      aeoSchemaScript.textContent = JSON.stringify(faqSchema);
+    } else if (aeoSchemaScript) {
+      aeoSchemaScript.remove();
+    }
   } catch (err) {
     console.warn('Could not update SEO meta tags:', err);
   }

@@ -320,18 +320,32 @@ export const ReaderView: React.FC<ReaderViewProps> = ({
                 </div>
 
                 <div className="space-y-6 font-reading text-[#332E27]">
-                  {section.paragraphs.map((p, pIndex) => (
-                    <p
-                      key={pIndex}
-                      className={
-                        sIndex === 0 && pIndex === 0
-                          ? 'first-letter:text-5xl first-letter:font-editorial first-letter:font-normal first-letter:float-left first-letter:mr-3 first-letter:mt-1 first-letter:text-[#7A5C3E]'
-                          : ''
-                      }
-                    >
-                      {p}
-                    </p>
-                  ))}
+                  {section.paragraphs.map((p, pIndex) => {
+                    const isDirectAnswer = p.startsWith('Answer: ');
+                    return (
+                      <p
+                        key={pIndex}
+                        className={
+                          isDirectAnswer
+                            ? 'p-4 sm:p-5 bg-[#F6F2E9] border-l-3 border-[#936B45] rounded-r-lg font-reading text-[#292524] text-base leading-relaxed my-3'
+                            : sIndex === 0 && pIndex === 1
+                              ? 'first-letter:text-5xl first-letter:font-editorial first-letter:font-normal first-letter:float-left first-letter:mr-3 first-letter:mt-1 first-letter:text-[#7A5C3E]'
+                              : ''
+                        }
+                      >
+                        {isDirectAnswer ? (
+                          <>
+                            <span className="font-mono text-xs uppercase tracking-wider text-[#7A5C3E] font-semibold block mb-1">
+                              Direct Answer
+                            </span>
+                            <span className="font-medium text-[#1C1917]">{p.replace('Answer: ', '')}</span>
+                          </>
+                        ) : (
+                          p
+                        )}
+                      </p>
+                    );
+                  })}
                 </div>
 
                 {/* Editorial Pull Quote */}

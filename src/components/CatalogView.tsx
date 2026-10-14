@@ -102,12 +102,29 @@ export const CatalogView: React.FC<CatalogViewProps> = ({
         <SoundSpectrumVisualizer />
       </section>
 
-      {/* Table of Contents Section Divider */}
+      {/* Table of Contents Section Divider with AEO Heading & Q&A */}
       <div className="relative flex items-center justify-center my-14">
         <div className="w-full border-t border-[#E7E0D3]" />
         <div className="absolute px-5 py-1 bg-[#FBF9F5] border border-[#E7E0D3] rounded-full text-xs font-mono tracking-widest uppercase text-[#7A5C3E]">
           The Complete Folio Archive
         </div>
+      </div>
+
+      <div className="mb-10 text-center max-w-3xl mx-auto">
+        <h2 className="font-editorial text-3xl sm:text-4xl text-[#1C1917] mb-3">
+          What is Sedatephobia and Why Does True Stillness Unnerve Us?
+        </h2>
+        <div className="p-4 sm:p-5 bg-[#F6F2E9] border-l-3 border-[#936B45] rounded-r-lg text-left my-4">
+          <span className="font-mono text-xs uppercase tracking-wider text-[#7A5C3E] font-semibold block mb-1">
+            Direct Answer
+          </span>
+          <p className="font-reading text-base text-[#292524] leading-relaxed">
+            Answer: Sedatephobia is the clinical fear of silence, quiet rooms, or absolute stillness. It occurs because sudden silence historically signaled predator danger in the wild, and in modern life, removing auditory distractions forces the nervous system to confront suppressed emotions, bodily sounds, and racing thoughts.
+          </p>
+        </div>
+        <p className="font-reading text-sm sm:text-base text-[#524B40] leading-relaxed">
+          Browse our ten peer-reviewed folios below to explore the clinical neuroscience, acoustic anthropology, and step-by-step practices for befriending quiet spaces.
+        </p>
       </div>
 
       {/* Category Filter Rail */}
@@ -169,17 +186,25 @@ export const CatalogView: React.FC<CatalogViewProps> = ({
         />
       </section>
 
-      {/* Anechoic Room Sensory Feature Box */}
+      {/* Anechoic Room Sensory Feature Box with AEO Heading & Q&A */}
       <section className="p-8 sm:p-12 bg-gradient-to-br from-[#F5EFE4] to-[#EFE7D8] border border-[#DDD5C5] rounded-2xl book-shadow relative overflow-hidden">
         <div className="max-w-3xl relative z-10">
           <span className="text-xs uppercase font-mono tracking-widest text-[#7A5C3E] block mb-2">
             Acoustic Landmark · Folio 04 Focus
           </span>
-          <h3 className="font-editorial text-2xl sm:text-3xl lg:text-4xl text-[#1C1917] leading-tight mb-4">
-            "In 45 Minutes of True Silence, You Become the Sound."
-          </h3>
+          <h2 className="font-editorial text-2xl sm:text-3xl lg:text-4xl text-[#1C1917] leading-tight mb-4">
+            Can Human Beings Hallucinate in Complete Silence?
+          </h2>
+          <div className="p-4 bg-[#EDE5D5] border-l-3 border-[#7A5C3E] rounded-r-lg mb-4 text-left">
+            <span className="font-mono text-xs uppercase tracking-wider text-[#7A5C3E] font-semibold block mb-1">
+              Direct Answer
+            </span>
+            <p className="font-reading text-sm sm:text-base text-[#292524] leading-relaxed">
+              Answer: Yes. Deprived of all external acoustic reflections in an anechoic chamber (-9.4 dBA), the auditory cortex experiences sensory deprivation, increasing electrical gain until internal bodily rhythms—heartbeats, inner ear static, and rushing blood—sound loud enough to trigger auditory illusions within 20 to 45 minutes.
+            </p>
+          </div>
           <p className="font-reading text-base text-[#4A443B] leading-relaxed mb-6">
-            At Orfield Laboratories in Minnesota, anechoic fiberglass wedges absorb 99.99% of acoustic energy, driving the noise floor down to negative 9.4 dBA. Within twenty minutes, you hear the rush of your bloodstream, the clicking of your joints, and the high-pitched electrical hum of your inner ear.
+            At Orfield Laboratories in Minnesota, anechoic fiberglass wedges absorb 99.99% of acoustic energy. Step inside, and you discover that living human bodies are never truly silent.
           </p>
           <div className="flex flex-wrap items-center gap-4">
             <a
@@ -196,6 +221,47 @@ export const CatalogView: React.FC<CatalogViewProps> = ({
             <span className="text-xs text-[#7A7062] font-mono">
               Indexed for: "quietest room in the world hallucinations"
             </span>
+          </div>
+        </div>
+      </section>
+
+      {/* Home Page AEO Editorial Q&A Section */}
+      <section className="mt-20 p-8 sm:p-10 bg-[#FAF7F0] border border-[#E7E0D3] rounded-2xl book-shadow">
+        <div className="max-w-3xl mx-auto">
+          <span className="text-xs uppercase font-mono tracking-widest text-[#7A5C3E] block mb-2 text-center">
+            Editorial Knowledge Base
+          </span>
+          <h2 className="font-editorial text-2xl sm:text-3xl text-center text-[#1C1917] mb-8">
+            Frequently Asked Questions on Silence and Anxiety
+          </h2>
+
+          <div className="space-y-6">
+            <div className="p-4 sm:p-5 bg-[#FCFAF6] border border-[#DDD5C5] rounded-xl">
+              <h3 className="font-editorial text-lg text-[#1C1917] mb-2 font-medium">
+                Why does silence make me feel anxious in an empty house?
+              </h3>
+              <p className="font-reading text-sm text-[#443F37] leading-relaxed">
+                <strong className="text-[#936B45]">Answer:</strong> Silence strips away the sensory veil of daily noise, causing your brain's Default Mode Network to process latent worries and unresolved thoughts. In nature, sudden stillness also signaled predator threats, keeping our nervous system on alert.
+              </p>
+            </div>
+
+            <div className="p-4 sm:p-5 bg-[#FCFAF6] border border-[#DDD5C5] rounded-xl">
+              <h3 className="font-editorial text-lg text-[#1C1917] mb-2 font-medium">
+                Why can I not fall asleep without a fan or background noise?
+              </h3>
+              <p className="font-reading text-sm text-[#443F37] leading-relaxed">
+                <strong className="text-[#936B45]">Answer:</strong> Background noise creates a raised acoustic threshold that masks sudden sound spikes (floor creaks, outdoor vehicles) and provides gentle cognitive engagement, preventing bedtime overthinking.
+              </p>
+            </div>
+
+            <div className="p-4 sm:p-5 bg-[#FCFAF6] border border-[#DDD5C5] rounded-xl">
+              <h3 className="font-editorial text-lg text-[#1C1917] mb-2 font-medium">
+                How can I stop being afraid of silence and learn to relax?
+              </h3>
+              <p className="font-reading text-sm text-[#443F37] leading-relaxed">
+                <strong className="text-[#936B45]">Answer:</strong> Practice graduated micro-exposure: take 60-second unbuffered breaks during everyday tasks (making tea, waiting for an elevator) without devices, grounding your attention in physical sensations.
+              </p>
+            </div>
           </div>
         </div>
       </section>
