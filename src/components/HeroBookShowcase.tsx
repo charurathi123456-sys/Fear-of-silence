@@ -52,13 +52,17 @@ export const HeroBookShowcase: React.FC<HeroBookShowcaseProps> = ({
 
           {/* Action CTAs */}
           <div className="flex flex-wrap items-center gap-3 pt-2">
-            <button
-              onClick={() => onOpenArticle(currentFolio)}
+            <a
+              href={`/${currentFolio.slug}`}
+              onClick={(e) => {
+                e.preventDefault();
+                onOpenArticle(currentFolio);
+              }}
               className="flex items-center gap-2 px-6 py-3.5 bg-[#292524] text-[#FBF9F5] hover:bg-[#44403C] rounded-xl font-medium text-xs tracking-wider uppercase transition-all shadow-md hover:shadow-lg cursor-pointer group"
             >
               <span>Read Folio {currentFolio.chapterNumber}</span>
               <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-            </button>
+            </a>
 
             <button
               onClick={onOpenPractice}

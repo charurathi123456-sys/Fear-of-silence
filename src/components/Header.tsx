@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Bookmark, Sparkles, Menu, X, Brain, Headphones, BookOpen, Search } from 'lucide-react';
+import { ROUTE_PATHS } from '../utils/routes';
 
 export type ViewType = 'catalog' | 'reader' | 'keywords' | 'clinical' | 'acoustic';
 
@@ -20,7 +21,12 @@ export const Header: React.FC<HeaderProps> = ({
 }) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
-  const handleMobileNav = (view: ViewType, filterCategory?: string) => {
+  const handleLinkClick = (
+    e: React.MouseEvent,
+    view: ViewType,
+    filterCategory?: string
+  ) => {
+    e.preventDefault();
     onNavigate(view, filterCategory);
     setMobileMenuOpen(false);
   };
@@ -28,9 +34,10 @@ export const Header: React.FC<HeaderProps> = ({
   return (
     <header className="sticky top-0 z-40 bg-[#FBF9F5]/95 backdrop-blur-md border-b border-[#E7E0D3] transition-colors">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-18 flex items-center justify-between">
-        {/* Zone 1: Single text element wordmark */}
-        <button
-          onClick={() => onNavigate('catalog')}
+        {/* Zone 1: Single text element wordmark pointing to /home */}
+        <a
+          href={ROUTE_PATHS.HOME}
+          onClick={(e) => handleLinkClick(e, 'catalog')}
           className="text-left group flex items-baseline gap-2 cursor-pointer focus:outline-none"
         >
           <span className="font-editorial text-2xl sm:text-3xl font-normal tracking-tight text-[#1C1917] group-hover:text-[#7A5C3E] transition-colors">
@@ -39,12 +46,13 @@ export const Header: React.FC<HeaderProps> = ({
           <span className="hidden sm:inline-block text-[11px] font-sans tracking-widest uppercase text-[#8C8275]">
             Journal of Silence
           </span>
-        </button>
+        </a>
 
-        {/* Zone 2: 4 clean text navigation links (Desktop) */}
+        {/* Zone 2: 4 clean text navigation links with unique URLs (Desktop) */}
         <nav className="hidden md:flex items-center gap-7 text-xs tracking-wider uppercase font-medium text-[#6B6255]">
-          <button
-            onClick={() => onNavigate('catalog', 'All Folios')}
+          <a
+            href={ROUTE_PATHS.HOME}
+            onClick={(e) => handleLinkClick(e, 'catalog', 'All Folios')}
             className={`cursor-pointer transition-colors py-1 border-b ${
               activeView === 'catalog'
                 ? 'text-[#1C1917] border-[#1C1917] font-semibold'
@@ -52,9 +60,10 @@ export const Header: React.FC<HeaderProps> = ({
             }`}
           >
             The Folios
-          </button>
-          <button
-            onClick={() => onNavigate('clinical')}
+          </a>
+          <a
+            href={ROUTE_PATHS.CLINICAL_SCIENCE}
+            onClick={(e) => handleLinkClick(e, 'clinical')}
             className={`cursor-pointer transition-colors py-1 border-b ${
               activeView === 'clinical'
                 ? 'text-[#1C1917] border-[#1C1917] font-semibold'
@@ -62,9 +71,10 @@ export const Header: React.FC<HeaderProps> = ({
             }`}
           >
             Clinical & Science
-          </button>
-          <button
-            onClick={() => onNavigate('acoustic')}
+          </a>
+          <a
+            href={ROUTE_PATHS.ACOUSTIC_CULTURE}
+            onClick={(e) => handleLinkClick(e, 'acoustic')}
             className={`cursor-pointer transition-colors py-1 border-b ${
               activeView === 'acoustic'
                 ? 'text-[#1C1917] border-[#1C1917] font-semibold'
@@ -72,9 +82,10 @@ export const Header: React.FC<HeaderProps> = ({
             }`}
           >
             Acoustic Culture
-          </button>
-          <button
-            onClick={() => onNavigate('keywords')}
+          </a>
+          <a
+            href={ROUTE_PATHS.SEARCH_KEYWORDS}
+            onClick={(e) => handleLinkClick(e, 'keywords')}
             className={`cursor-pointer transition-colors py-1 border-b ${
               activeView === 'keywords'
                 ? 'text-[#1C1917] border-[#1C1917] font-semibold'
@@ -82,7 +93,7 @@ export const Header: React.FC<HeaderProps> = ({
             }`}
           >
             Search Matrix
-          </button>
+          </a>
         </nav>
 
         {/* Zone 3: Actions + Mobile Menu Button */}
@@ -120,12 +131,13 @@ export const Header: React.FC<HeaderProps> = ({
         </div>
       </div>
 
-      {/* Mobile Navigation Dropdown Menu */}
+      {/* Mobile Navigation Dropdown Menu with real links */}
       {mobileMenuOpen && (
         <div className="md:hidden border-t border-[#E7E0D3] bg-[#FAF8F5] px-4 py-4 space-y-2 animate-in slide-in-from-top-2 duration-200">
-          <button
-            onClick={() => handleMobileNav('catalog', 'All Folios')}
-            className={`w-full text-left px-3 py-2.5 rounded-lg text-sm font-medium flex items-center gap-2.5 transition-colors ${
+          <a
+            href={ROUTE_PATHS.HOME}
+            onClick={(e) => handleLinkClick(e, 'catalog', 'All Folios')}
+            className={`w-full text-left px-3 py-2.5 rounded-lg text-sm font-medium flex items-center gap-2.5 transition-colors cursor-pointer ${
               activeView === 'catalog'
                 ? 'bg-[#292524] text-[#FBF9F5]'
                 : 'text-[#44403C] hover:bg-[#F2ECE1]'
@@ -133,11 +145,12 @@ export const Header: React.FC<HeaderProps> = ({
           >
             <BookOpen className="w-4 h-4" />
             <span>The Folios (All 10 Chapters)</span>
-          </button>
+          </a>
 
-          <button
-            onClick={() => handleMobileNav('clinical')}
-            className={`w-full text-left px-3 py-2.5 rounded-lg text-sm font-medium flex items-center gap-2.5 transition-colors ${
+          <a
+            href={ROUTE_PATHS.CLINICAL_SCIENCE}
+            onClick={(e) => handleLinkClick(e, 'clinical')}
+            className={`w-full text-left px-3 py-2.5 rounded-lg text-sm font-medium flex items-center gap-2.5 transition-colors cursor-pointer ${
               activeView === 'clinical'
                 ? 'bg-[#292524] text-[#FBF9F5]'
                 : 'text-[#44403C] hover:bg-[#F2ECE1]'
@@ -145,11 +158,12 @@ export const Header: React.FC<HeaderProps> = ({
           >
             <Brain className="w-4 h-4 text-[#936B45]" />
             <span>Clinical & Science</span>
-          </button>
+          </a>
 
-          <button
-            onClick={() => handleMobileNav('acoustic')}
-            className={`w-full text-left px-3 py-2.5 rounded-lg text-sm font-medium flex items-center gap-2.5 transition-colors ${
+          <a
+            href={ROUTE_PATHS.ACOUSTIC_CULTURE}
+            onClick={(e) => handleLinkClick(e, 'acoustic')}
+            className={`w-full text-left px-3 py-2.5 rounded-lg text-sm font-medium flex items-center gap-2.5 transition-colors cursor-pointer ${
               activeView === 'acoustic'
                 ? 'bg-[#292524] text-[#FBF9F5]'
                 : 'text-[#44403C] hover:bg-[#F2ECE1]'
@@ -157,11 +171,12 @@ export const Header: React.FC<HeaderProps> = ({
           >
             <Headphones className="w-4 h-4 text-[#936B45]" />
             <span>Acoustic Culture</span>
-          </button>
+          </a>
 
-          <button
-            onClick={() => handleMobileNav('keywords')}
-            className={`w-full text-left px-3 py-2.5 rounded-lg text-sm font-medium flex items-center gap-2.5 transition-colors ${
+          <a
+            href={ROUTE_PATHS.SEARCH_KEYWORDS}
+            onClick={(e) => handleLinkClick(e, 'keywords')}
+            className={`w-full text-left px-3 py-2.5 rounded-lg text-sm font-medium flex items-center gap-2.5 transition-colors cursor-pointer ${
               activeView === 'keywords'
                 ? 'bg-[#292524] text-[#FBF9F5]'
                 : 'text-[#44403C] hover:bg-[#F2ECE1]'
@@ -169,7 +184,7 @@ export const Header: React.FC<HeaderProps> = ({
           >
             <Search className="w-4 h-4" />
             <span>Search Matrix (SEO Explorer)</span>
-          </button>
+          </a>
         </div>
       )}
     </header>

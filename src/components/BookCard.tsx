@@ -1,5 +1,5 @@
 import React from 'react';
-import { Bookmark, Clock, ArrowRight, BookOpen } from 'lucide-react';
+import { Bookmark, Clock, ArrowRight } from 'lucide-react';
 import { Article } from '../types/article';
 import { HumanImage } from './HumanImage';
 
@@ -18,9 +18,20 @@ export const BookCard: React.FC<BookCardProps> = ({
   onOpenArticle,
   isFeatured = false,
 }) => {
+  const articlePath = `/${article.slug}`;
+
+  const handleCardClick = (e: React.MouseEvent) => {
+    // If click was on bookmark button, do nothing
+    if ((e.target as HTMLElement).closest('button')) {
+      return;
+    }
+    e.preventDefault();
+    onOpenArticle(article);
+  };
+
   return (
     <article
-      onClick={() => onOpenArticle(article)}
+      onClick={handleCardClick}
       className={`group relative flex flex-col justify-between bg-[#FCFAF6] hover:bg-[#FFFDF9] border border-[#E7E0D3] hover:border-[#C4B7A2] rounded-xl transition-all duration-300 cursor-pointer overflow-hidden book-shadow hover:-translate-y-1 ${
         isFeatured
           ? 'md:col-span-2 lg:col-span-2 bg-gradient-to-br from-[#FAF7F0] to-[#F5EFE4]'
@@ -71,7 +82,7 @@ export const BookCard: React.FC<BookCardProps> = ({
             <span>{article.readTime}</span>
           </div>
 
-          {/* Title */}
+          {/* Title with clean link */}
           <h3
             className={`font-editorial font-medium text-[#1C1917] group-hover:text-[#7A5C3E] transition-colors leading-tight mb-3 ${
               isFeatured
@@ -80,7 +91,16 @@ export const BookCard: React.FC<BookCardProps> = ({
             }`}
             style={{ textWrap: 'balance' }}
           >
-            {article.title}
+            <a
+              href={articlePath}
+              onClick={(e) => {
+                e.preventDefault();
+                onOpenArticle(article);
+              }}
+              className="hover:underline focus:outline-none"
+            >
+              {article.title}
+            </a>
           </h3>
 
           {/* Excerpt */}
@@ -101,7 +121,7 @@ export const BookCard: React.FC<BookCardProps> = ({
 
         {/* Footer Metadata */}
         <div>
-          {/* Subtle SEO keywords preview (unboxed text discipline) */}
+          {/* Subtle SEO keywords preview */}
           <div className="flex flex-wrap items-center gap-x-2 gap-y-1 text-[11px] text-[#857B6E] mb-4">
             <span className="text-[#A39889]">Search terms:</span>
             {article.seoKeywords.slice(0, 3).map((kw, i) => (
@@ -122,14 +142,20 @@ export const BookCard: React.FC<BookCardProps> = ({
               </span>
             </div>
 
-            <div className="flex items-center gap-1 font-medium text-[#292524] group-hover:text-[#936B45] transition-colors">
+            <a
+              href={articlePath}
+              onClick={(e) => {
+                e.preventDefault();
+                onOpenArticle(article);
+              }}
+              className="flex items-center gap-1 font-medium text-[#292524] group-hover:text-[#936B45] transition-colors focus:outline-none"
+            >
               <span>Open Folio</span>
               <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
-            </div>
+            </a>
           </div>
         </div>
       </div>
     </article>
   );
 };
-

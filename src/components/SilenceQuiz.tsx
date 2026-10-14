@@ -125,13 +125,17 @@ export const SilenceQuiz: React.FC<SilenceQuizProps> = ({ articles, onSelectArti
           </p>
 
           <div className="flex flex-wrap items-center gap-3">
-            <button
-              onClick={() => onSelectArticle(matchedArticle)}
+            <a
+              href={`/${matchedArticle.slug}`}
+              onClick={(e) => {
+                e.preventDefault();
+                onSelectArticle(matchedArticle);
+              }}
               className="px-5 py-2.5 bg-[#292524] text-[#FBF9F5] text-xs font-medium rounded-lg hover:bg-[#44403C] transition-colors cursor-pointer flex items-center gap-2"
             >
               <span>Read Folio {matchedArticle.chapterNumber} Now</span>
               <ArrowRight className="w-3.5 h-3.5" />
-            </button>
+            </a>
             <button
               onClick={handleReset}
               className="flex items-center gap-1.5 px-4 py-2.5 border border-[#DDD5C5] hover:bg-[#EFEAE0] text-xs text-[#6B6255] rounded-lg transition-colors cursor-pointer"

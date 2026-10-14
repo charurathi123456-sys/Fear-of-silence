@@ -182,15 +182,17 @@ export const CatalogView: React.FC<CatalogViewProps> = ({
             At Orfield Laboratories in Minnesota, anechoic fiberglass wedges absorb 99.99% of acoustic energy, driving the noise floor down to negative 9.4 dBA. Within twenty minutes, you hear the rush of your bloodstream, the clicking of your joints, and the high-pitched electrical hum of your inner ear.
           </p>
           <div className="flex flex-wrap items-center gap-4">
-            <button
-              onClick={() => {
+            <a
+              href="/quietest-room-on-earth"
+              onClick={(e) => {
+                e.preventDefault();
                 const anechoic = articles.find((a) => a.id === 'anechoic-chamber-madness');
                 if (anechoic) onOpenArticle(anechoic);
               }}
-              className="px-5 py-2.5 bg-[#292524] text-[#FBF9F5] text-xs font-medium rounded-lg hover:bg-[#44403C] transition-colors cursor-pointer"
+              className="px-5 py-2.5 bg-[#292524] text-[#FBF9F5] text-xs font-medium rounded-lg hover:bg-[#44403C] transition-colors cursor-pointer inline-block"
             >
               Read Folio 04: The Anechoic Experiment
-            </button>
+            </a>
             <span className="text-xs text-[#7A7062] font-mono">
               Indexed for: "quietest room in the world hallucinations"
             </span>

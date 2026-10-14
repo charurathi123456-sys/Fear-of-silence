@@ -79,10 +79,14 @@ export const KeywordExplorer: React.FC<KeywordExplorerProps> = ({
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           {articles.map((article) => (
-            <div
+            <a
               key={article.id}
-              onClick={() => onSelectArticle(article)}
-              className="group flex items-center justify-between p-4 bg-[#FCFAF6] hover:bg-[#FAF6EE] border border-[#E7E0D3] hover:border-[#C4B7A2] rounded-xl cursor-pointer transition-all duration-200 book-shadow hover:-translate-y-0.5"
+              href={`/${article.slug}`}
+              onClick={(e) => {
+                e.preventDefault();
+                onSelectArticle(article);
+              }}
+              className="group flex items-center justify-between p-4 bg-[#FCFAF6] hover:bg-[#FAF6EE] border border-[#E7E0D3] hover:border-[#C4B7A2] rounded-xl cursor-pointer transition-all duration-200 book-shadow hover:-translate-y-0.5 text-left block"
             >
               <div className="flex items-center gap-4 pr-2">
                 <div className="w-16 h-16 rounded-lg overflow-hidden shrink-0 border border-[#D8CEBD] bg-[#EDE5D5]">
@@ -110,7 +114,7 @@ export const KeywordExplorer: React.FC<KeywordExplorerProps> = ({
                 </div>
               </div>
               <ArrowUpRight className="w-4 h-4 text-[#A39889] group-hover:text-[#936B45] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform shrink-0" />
-            </div>
+            </a>
           ))}
         </div>
       </section>
@@ -152,10 +156,14 @@ export const KeywordExplorer: React.FC<KeywordExplorerProps> = ({
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {filteredArticles.map((article) => (
-              <div
+              <a
                 key={article.id}
-                onClick={() => onSelectArticle(article)}
-                className="p-5 bg-[#FCFAF6] border border-[#E7E0D3] hover:border-[#936B45] rounded-lg cursor-pointer transition-colors"
+                href={`/${article.slug}`}
+                onClick={(e) => {
+                  e.preventDefault();
+                  onSelectArticle(article);
+                }}
+                className="p-5 bg-[#FCFAF6] border border-[#E7E0D3] hover:border-[#936B45] rounded-lg cursor-pointer transition-colors text-left block"
               >
                 <span className="font-mono text-[10px] text-[#8C8275] block mb-1">
                   FOLIO {article.chapterNumber} · {article.readTime}
@@ -166,7 +174,7 @@ export const KeywordExplorer: React.FC<KeywordExplorerProps> = ({
                 <p className="font-reading text-xs text-[#524B40] line-clamp-2">
                   {article.excerpt}
                 </p>
-              </div>
+              </a>
             ))}
           </div>
         </section>

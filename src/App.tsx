@@ -10,6 +10,7 @@ import { KeywordExplorer } from './components/KeywordExplorer';
 import { SilencePracticeModal } from './components/SilencePracticeModal';
 import { ReadingShelfDrawer } from './components/ReadingShelfDrawer';
 import { updatePageSeo } from './utils/seo';
+import { resolveRoute, pushCleanUrl, ROUTE_PATHS } from './utils/routes';
 
 export default function App() {
   const [activeView, setActiveView] = useState<ViewType>('catalog');
@@ -35,110 +36,39 @@ export default function App() {
     }
   }, [savedIds]);
 
-  // Update browser address bar and history with unique, clean URLs
-  const updateBrowserUrl = useCallback((path: string, hash: string = '') => {
-    const fullTarget = hash ? `${path}#${hash}` : path;
-    try {
-      if (window.location.pathname !== path || window.location.hash !== (hash ? `#${hash}` : '')) {
-        window.history.pushState(null, '', fullTarget);
-      }
-    } catch {
-      // Fallback if pushState is restricted in iframe environment
-      if (hash) {
-        window.location.hash = hash;
-      }
-    }
-  }, []);
+  // Synchronize route from browser location
+  const syncRouteFromLocation = useCallback(() => {
+    // If there is an old hash or raw path, inspect both
+    const rawPath = window.location.pathname;
+    const hash = window.location.hash.replace(/^#\/?/, '');
+    
+    // If hash was used in a previous session, normalize it to clean path
+    const pathToResolve = hash ? `/${hash}` : rawPath;
+    const resolution = resolveRoute(pathToResolve);
 
-  // Parse current route from path and hash
-  const parseCurrentRoute = useCallback(() => {
-    const pathname = window.location.pathname.replace(/\/$/, '') || '/';
-    const hash = window.location.hash.replace('#', '').replace(/^\//, '');
+    setActiveView(resolution.view);
+    setSelectedArticle(resolution.article);
 
-    // 1. Article / Folio route: /folio/:slug or #folio/:slug
-    if (pathname.startsWith('/folio/') || hash.startsWith('folio/') || hash.startsWith('article/')) {
-      const targetSlug = pathname.replace('/folio/', '') || hash.replace('folio/', '').replace('article/', '');
-      const matched = ARTICLES.find((a) => a.slug === targetSlug || a.id === targetSlug);
-      if (matched) {
-        setSelectedArticle(matched);
-        setActiveView('reader');
-        updatePageSeo({
-          title: `${matched.title} — Quietude`,
-          description: matched.excerpt,
-          path: `/folio/${matched.slug}`,
-          type: 'article',
-        });
-        return;
-      }
-    }
+    // Ensure browser URL is clean (no '#' symbol, unique /home for landing page)
+    pushCleanUrl(resolution.path);
 
-    // 2. Clinical & Science: /clinical-science or #clinical-science
-    if (
-      pathname === '/clinical-science' ||
-      pathname === '/clinical' ||
-      hash === 'clinical-science' ||
-      hash === 'clinical'
-    ) {
-      setActiveView('clinical');
-      updatePageSeo({
-        title: 'Clinical & Science of Silence — Quietude',
-        description: 'Explore neuroscience, central auditory gain, the Default Mode Network, and acoustic deprivation research from Orfield Laboratories.',
-        path: '/clinical-science',
-      });
-      return;
-    }
-
-    // 3. Acoustic Culture: /acoustic-culture or #acoustic-culture
-    if (
-      pathname === '/acoustic-culture' ||
-      pathname === '/acoustic' ||
-      hash === 'acoustic-culture' ||
-      hash === 'acoustic'
-    ) {
-      setActiveView('acoustic');
-      updatePageSeo({
-        title: 'Acoustic Culture of Modern Life — Quietude',
-        description: 'Cultural essays on 24/7 background audio, white noise addiction, awkward conversational pauses, and the smartphone reflex.',
-        path: '/acoustic-culture',
-      });
-      return;
-    }
-
-    // 4. Search Matrix / Keywords: /search or #search
-    if (
-      pathname === '/search' ||
-      pathname === '/keywords' ||
-      hash === 'search' ||
-      hash === 'keywords'
-    ) {
-      setActiveView('keywords');
-      updatePageSeo({
-        title: 'Search Matrix & Keywords — Quietude',
-        description: 'Discover top searched questions, queries, and high-intent terminology regarding sedatephobia and the fear of silence.',
-        path: '/search',
-      });
-      return;
-    }
-
-    // 5. Unique Landing Page / Homepage: /
-    setActiveView('catalog');
+    // Update SEO tags
     updatePageSeo({
-      title: 'Quietude — Essays on Sedatephobia & The Fear of Silence',
-      description: 'An editorial journal exploring sedatephobia, background noise addiction, conversational dread, and the psychological architecture behind the fear of silence.',
-      path: '/',
+      title: resolution.title,
+      description: resolution.description,
+      path: resolution.path,
+      type: resolution.view === 'reader' ? 'article' : 'website',
     });
   }, []);
 
-  // Synchronize on mount and listen to popstate / hashchange
+  // Listen to popstate (browser back/forward navigation)
   useEffect(() => {
-    parseCurrentRoute();
-    window.addEventListener('popstate', parseCurrentRoute);
-    window.addEventListener('hashchange', parseCurrentRoute);
+    syncRouteFromLocation();
+    window.addEventListener('popstate', syncRouteFromLocation);
     return () => {
-      window.removeEventListener('popstate', parseCurrentRoute);
-      window.removeEventListener('hashchange', parseCurrentRoute);
+      window.removeEventListener('popstate', syncRouteFromLocation);
     };
-  }, [parseCurrentRoute]);
+  }, [syncRouteFromLocation]);
 
   const handleToggleSave = (id: string, e?: React.MouseEvent) => {
     if (e) e.stopPropagation();
@@ -147,69 +77,82 @@ export default function App() {
     );
   };
 
+  // Open an article with its own unique, clean URL (e.g. /fear-of-silence)
   const handleOpenArticle = (article: Article) => {
     setSelectedArticle(article);
     setActiveView('reader');
-    updateBrowserUrl(`/folio/${article.slug}`, `folio/${article.slug}`);
+    const cleanPath = `/${article.slug}`;
+
+    pushCleanUrl(cleanPath);
+
     updatePageSeo({
       title: `${article.title} — Quietude`,
       description: article.excerpt,
-      path: `/folio/${article.slug}`,
+      path: cleanPath,
       type: 'article',
     });
+
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
+  // Back to Homepage with unique /home URL
   const handleBackToCatalog = () => {
     setActiveView('catalog');
-    updateBrowserUrl('/', '');
+    pushCleanUrl(ROUTE_PATHS.HOME);
+
     updatePageSeo({
       title: 'Quietude — Essays on Sedatephobia & The Fear of Silence',
-      description: 'An editorial journal exploring sedatephobia, background noise addiction, conversational dread, and the psychological architecture behind the fear of silence.',
-      path: '/',
+      description:
+        'An editorial journal exploring sedatephobia, background noise addiction, conversational dread, and the psychological architecture behind the fear of silence.',
+      path: ROUTE_PATHS.HOME,
+      type: 'website',
     });
+
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
+  // Navigate to any of the unique pages
   const handleNavigate = (view: ViewType, filterCategory?: string) => {
     setActiveView(view);
     if (filterCategory) {
       setSelectedCategory(filterCategory);
     }
 
+    let targetPath: string = ROUTE_PATHS.HOME;
+    let title = 'Quietude — Essays on Sedatephobia & The Fear of Silence';
+    let description =
+      'An editorial journal exploring sedatephobia, background noise addiction, conversational dread, and the psychological architecture behind the fear of silence.';
+
     if (view === 'catalog') {
-      // Clean, unique URL for Homepage
-      updateBrowserUrl('/', '');
-      updatePageSeo({
-        title: 'Quietude — Essays on Sedatephobia & The Fear of Silence',
-        description: 'An editorial journal exploring sedatephobia, background noise addiction, conversational dread, and the psychological architecture behind the fear of silence.',
-        path: '/',
-      });
+      targetPath = ROUTE_PATHS.HOME;
+      title = 'Quietude — Essays on Sedatephobia & The Fear of Silence';
+      description =
+        'An editorial journal exploring sedatephobia, background noise addiction, conversational dread, and the psychological architecture behind the fear of silence.';
     } else if (view === 'clinical') {
-      // Unique URL for Clinical & Science
-      updateBrowserUrl('/clinical-science', 'clinical-science');
-      updatePageSeo({
-        title: 'Clinical & Science of Silence — Quietude',
-        description: 'Explore neuroscience, central auditory gain, the Default Mode Network, and acoustic deprivation research from Orfield Laboratories.',
-        path: '/clinical-science',
-      });
+      targetPath = ROUTE_PATHS.CLINICAL_SCIENCE;
+      title = 'Clinical & Science of Silence — Quietude';
+      description =
+        'Explore neuroscience, central auditory gain in tinnitus, the Default Mode Network, and acoustic deprivation research from Orfield Laboratories.';
     } else if (view === 'acoustic') {
-      // Unique URL for Acoustic Culture
-      updateBrowserUrl('/acoustic-culture', 'acoustic-culture');
-      updatePageSeo({
-        title: 'Acoustic Culture of Modern Life — Quietude',
-        description: 'Cultural essays on 24/7 background audio, white noise addiction, awkward conversational pauses, and the smartphone reflex.',
-        path: '/acoustic-culture',
-      });
+      targetPath = ROUTE_PATHS.ACOUSTIC_CULTURE;
+      title = 'Acoustic Culture of Modern Life — Quietude';
+      description =
+        'Cultural essays on 24/7 background audio, white noise addiction, awkward conversational pauses, and the smartphone reflex.';
     } else if (view === 'keywords') {
-      // Unique URL for Search Matrix
-      updateBrowserUrl('/search', 'search');
-      updatePageSeo({
-        title: 'Search Matrix & Keywords — Quietude',
-        description: 'Discover top searched questions, queries, and high-intent terminology regarding sedatephobia and the fear of silence.',
-        path: '/search',
-      });
+      targetPath = ROUTE_PATHS.SEARCH_KEYWORDS;
+      title = 'Search Matrix & Keywords — Quietude';
+      description =
+        'Discover top searched questions, queries, and high-intent terminology regarding sedatephobia and the fear of silence.';
     }
+
+    pushCleanUrl(targetPath);
+
+    updatePageSeo({
+      title,
+      description,
+      path: targetPath,
+      type: 'website',
+    });
 
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
@@ -218,7 +161,7 @@ export default function App() {
 
   return (
     <div className="min-h-screen bg-[#FBF9F5] text-[#292524] flex flex-col font-sans selection:bg-[#E7DEC8] selection:text-[#1C1917]">
-      {/* 3-Zone Top Navigation Bar */}
+      {/* 3-Zone Top Navigation Bar with real clean URL links */}
       <Header
         activeView={activeView}
         onNavigate={handleNavigate}

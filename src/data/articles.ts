@@ -3,7 +3,7 @@ import { Article } from '../types/article';
 export const ARTICLES: Article[] = [
   {
     id: 'sedatephobia-clinical-panic',
-    slug: 'why-does-silence-make-you-anxious-fear-of-quiet',
+    slug: 'fear-of-silence',
     folioNumber: 1,
     chapterNumber: '01',
     chapterCategory: 'Mind & Body',
@@ -72,7 +72,7 @@ export const ARTICLES: Article[] = [
   },
   {
     id: 'white-noise-addiction',
-    slug: 'cant-sleep-without-sound-why-you-need-background-noise',
+    slug: 'white-noise-addiction',
     folioNumber: 2,
     chapterNumber: '02',
     chapterCategory: 'Everyday Habits',
@@ -139,7 +139,7 @@ export const ARTICLES: Article[] = [
   },
   {
     id: 'awkward-silence-anxiety',
-    slug: 'why-awkward-silences-feel-scary-how-to-handle-them',
+    slug: 'awkward-silence',
     folioNumber: 3,
     chapterNumber: '03',
     chapterCategory: 'Social Life',
@@ -206,7 +206,7 @@ export const ARTICLES: Article[] = [
   },
   {
     id: 'anechoic-chamber-madness',
-    slug: 'the-quietest-room-on-earth-what-happens-to-your-body',
+    slug: 'quietest-room-on-earth',
     folioNumber: 4,
     chapterNumber: '04',
     chapterCategory: 'True Stories',
@@ -274,7 +274,7 @@ export const ARTICLES: Article[] = [
   },
   {
     id: 'tinnitus-fear-of-silence',
-    slug: 'why-is-tinnitus-so-loud-at-night-breaking-the-ringing-cycle',
+    slug: 'tinnitus-in-silence',
     folioNumber: 5,
     chapterNumber: '05',
     chapterCategory: 'Health & Ears',
@@ -341,7 +341,7 @@ export const ARTICLES: Article[] = [
   },
   {
     id: 'horror-vacui-empty-mind',
-    slug: 'why-cant-you-just-sit-with-your-thoughts-stay-busy',
+    slug: 'fear-of-empty-thoughts',
     folioNumber: 6,
     chapterNumber: '06',
     chapterCategory: 'Philosophy of Mind',
@@ -408,7 +408,7 @@ export const ARTICLES: Article[] = [
   },
   {
     id: 'silence-in-relationships-stonewalling',
-    slug: 'silence-in-relationships-peaceful-comfort-or-cold-shoulder',
+    slug: 'silence-in-relationships',
     folioNumber: 7,
     chapterNumber: '07',
     chapterCategory: 'Love & Family',
@@ -476,7 +476,7 @@ export const ARTICLES: Article[] = [
   },
   {
     id: 'digital-pacifiers-infinite-scroll',
-    slug: 'why-we-check-phones-the-second-things-get-quiet',
+    slug: 'scrolling-to-avoid-silence',
     folioNumber: 8,
     chapterNumber: '08',
     chapterCategory: 'Screen Habits',
@@ -543,7 +543,7 @@ export const ARTICLES: Article[] = [
   },
   {
     id: 'default-mode-network',
-    slug: 'why-your-brain-starts-overthinking-when-you-lie-down',
+    slug: 'overthinking-in-the-quiet',
     folioNumber: 9,
     chapterNumber: '09',
     chapterCategory: 'Brain Science',
@@ -611,7 +611,7 @@ export const ARTICLES: Article[] = [
   },
   {
     id: 'befriending-the-void',
-    slug: 'how-to-finally-make-peace-with-silence-4-step-guide',
+    slug: 'how-to-enjoy-silence',
     folioNumber: 10,
     chapterNumber: '10',
     chapterCategory: 'Practical Guide',

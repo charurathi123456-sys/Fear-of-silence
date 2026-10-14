@@ -83,7 +83,17 @@ export const ReadingShelfDrawer: React.FC<ReadingShelfDrawerProps> = ({
                     </div>
 
                     <h4 className="font-editorial text-base text-[#1C1917] group-hover:text-[#7A5C3E] transition-colors leading-snug pl-2 mb-2">
-                      {article.title}
+                      <a
+                        href={`/${article.slug}`}
+                        onClick={(e) => {
+                          e.preventDefault();
+                          onSelectArticle(article);
+                          onClose();
+                        }}
+                        className="hover:underline"
+                      >
+                        {article.title}
+                      </a>
                     </h4>
                   </div>
 

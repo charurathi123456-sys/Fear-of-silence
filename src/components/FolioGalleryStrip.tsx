@@ -32,10 +32,14 @@ export const FolioGalleryStrip: React.FC<FolioGalleryStripProps> = ({
       {/* Horizontal Scrollable Plates Gallery */}
       <div className="flex gap-4 overflow-x-auto pb-4 scrollbar-thin snap-x">
         {articles.map((article) => (
-          <div
+          <a
             key={article.id}
-            onClick={() => onSelectArticle(article)}
-            className="group shrink-0 w-64 sm:w-72 bg-[#FCFAF6] hover:bg-[#FAF7F0] border border-[#E7E0D3] hover:border-[#936B45] rounded-xl overflow-hidden book-shadow cursor-pointer transition-all duration-300 hover:-translate-y-1 snap-start"
+            href={`/${article.slug}`}
+            onClick={(e) => {
+              e.preventDefault();
+              onSelectArticle(article);
+            }}
+            className="group shrink-0 w-64 sm:w-72 bg-[#FCFAF6] hover:bg-[#FAF7F0] border border-[#E7E0D3] hover:border-[#936B45] rounded-xl overflow-hidden book-shadow cursor-pointer transition-all duration-300 hover:-translate-y-1 snap-start text-left block"
           >
             {/* Visual Plate Header */}
             <div className="h-44 relative bg-[#EDE5D5] overflow-hidden">
@@ -68,7 +72,7 @@ export const FolioGalleryStrip: React.FC<FolioGalleryStripProps> = ({
                 <span className="group-hover:underline">Read →</span>
               </div>
             </div>
-          </div>
+          </a>
         ))}
       </div>
     </section>

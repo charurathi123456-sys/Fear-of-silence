@@ -15,6 +15,7 @@ import {
 } from 'lucide-react';
 import { Article } from '../types/article';
 import { ambientAudio } from '../utils/audioSynth';
+import { ROUTE_PATHS } from '../utils/routes';
 import { FolioArtwork } from './FolioArtwork';
 import { HumanImage } from './HumanImage';
 import { SectionIcon } from './SectionIcon';
@@ -104,13 +105,17 @@ export const ReaderView: React.FC<ReaderViewProps> = ({
       <div className="sticky top-18 z-30 bg-[#F7F4EC]/95 backdrop-blur-md border-b border-[#E7E0D3] py-2 px-4 sm:px-6">
         <div className="max-w-6xl mx-auto flex flex-wrap items-center justify-between gap-3 text-xs">
           {/* Back button */}
-          <button
-            onClick={onBackToCatalog}
+          <a
+            href={ROUTE_PATHS.HOME}
+            onClick={(e) => {
+              e.preventDefault();
+              onBackToCatalog();
+            }}
             className="flex items-center gap-1.5 text-[#5C5346] hover:text-[#1C1917] font-medium transition-colors cursor-pointer"
           >
             <ArrowLeft className="w-3.5 h-3.5" />
             <span>Volume Index</span>
-          </button>
+          </a>
 
           {/* Chapter & Folio Position */}
           <div className="hidden sm:flex items-center gap-2 font-mono text-[11px] text-[#7A7062]">
@@ -396,8 +401,12 @@ export const ReaderView: React.FC<ReaderViewProps> = ({
           {/* Book Folio Navigation (Previous / Next Pages) */}
           <nav className="mt-14 pt-8 border-t border-[#EAE3D6] grid grid-cols-1 sm:grid-cols-2 gap-4">
             {prevArticle ? (
-              <button
-                onClick={() => onSelectArticle(prevArticle)}
+              <a
+                href={`/${prevArticle.slug}`}
+                onClick={(e) => {
+                  e.preventDefault();
+                  onSelectArticle(prevArticle);
+                }}
                 className="group flex flex-col p-4 bg-[#FAF7F0] hover:bg-[#F4EFE6] border border-[#E7E0D3] rounded text-left transition-colors cursor-pointer"
               >
                 <div className="flex items-center gap-1.5 text-xs text-[#8C8275] uppercase font-mono mb-1">
@@ -407,14 +416,18 @@ export const ReaderView: React.FC<ReaderViewProps> = ({
                 <span className="font-editorial text-base text-[#1C1917] group-hover:text-[#936B45] transition-colors line-clamp-1">
                   {prevArticle.title}
                 </span>
-              </button>
+              </a>
             ) : (
               <div />
             )}
 
             {nextArticle && (
-              <button
-                onClick={() => onSelectArticle(nextArticle)}
+              <a
+                href={`/${nextArticle.slug}`}
+                onClick={(e) => {
+                  e.preventDefault();
+                  onSelectArticle(nextArticle);
+                }}
                 className="group flex flex-col p-4 bg-[#FAF7F0] hover:bg-[#F4EFE6] border border-[#E7E0D3] rounded text-right transition-colors cursor-pointer sm:ml-auto w-full"
               >
                 <div className="flex items-center justify-end gap-1.5 text-xs text-[#8C8275] uppercase font-mono mb-1">
@@ -424,7 +437,7 @@ export const ReaderView: React.FC<ReaderViewProps> = ({
                 <span className="font-editorial text-base text-[#1C1917] group-hover:text-[#936B45] transition-colors line-clamp-1">
                   {nextArticle.title}
                 </span>
-              </button>
+              </a>
             )}
           </nav>
         </div>
