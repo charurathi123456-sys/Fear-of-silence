@@ -47,7 +47,7 @@ export function resolveRoute(rawPath: string): RouteResolution {
       path: '/home',
       title: 'Quietude — Essays on Sedatephobia & The Fear of Silence',
       description:
-        'An editorial journal exploring sedatephobia, background noise addiction, conversational dread, and the psychological architecture behind the fear of silence.',
+        'Struggling with the fear of silence or sedatephobia? Discover the root causes of quiet anxiety, white noise reliance, and simple steps to find lasting calm now.',
     };
   }
 
@@ -59,7 +59,7 @@ export function resolveRoute(rawPath: string): RouteResolution {
       path: '/clinical-science',
       title: 'Clinical & Science of Silence — Quietude',
       description:
-        'Explore neuroscience, central auditory gain in tinnitus, the Default Mode Network, and acoustic deprivation research from Orfield Laboratories.',
+        'Explore the clinical neuroscience behind the fear of silence, central auditory gain, tinnitus, and anechoic chamber research. Uncover what happens to you today.',
     };
   }
 
@@ -71,7 +71,7 @@ export function resolveRoute(rawPath: string): RouteResolution {
       path: '/acoustic-culture',
       title: 'Acoustic Culture of Modern Life — Quietude',
       description:
-        'Cultural essays on 24/7 background audio, white noise addiction, awkward conversational pauses, and the smartphone reflex.',
+        'Why is modern society addicted to background noise? Examine the cultural shift from quiet rooms to constant podcasts and box fans. Read our in-depth essay now.',
     };
   }
 
@@ -87,22 +87,11 @@ export function resolveRoute(rawPath: string): RouteResolution {
       path: '/search-keywords',
       title: 'Search Matrix & Keywords — Quietude',
       description:
-        'Discover top searched questions, queries, and high-intent terminology regarding sedatephobia and the fear of silence.',
+        'Explore the most searched queries and clinical terms on the fear of silence, sedatephobia, and noise addiction. Find answers to your pressing questions today.',
     };
   }
 
   // 5. Check if it matches any of the 10 articles by clean slug or id
-  // Clean slugs are:
-  // - /fear-of-silence
-  // - /white-noise-addiction
-  // - /awkward-silence
-  // - /quietest-room-on-earth
-  // - /tinnitus-in-silence
-  // - /fear-of-empty-thoughts
-  // - /silence-in-relationships
-  // - /scrolling-to-avoid-silence
-  // - /overthinking-in-the-quiet
-  // - /how-to-enjoy-silence
   const targetSegment = clean
     .replace(/^\//, '')
     .replace(/^folio\//, '')
@@ -118,7 +107,7 @@ export function resolveRoute(rawPath: string): RouteResolution {
       article: matchedArticle,
       path: `/${matchedArticle.slug}`,
       title: `${matchedArticle.title} — Quietude`,
-      description: matchedArticle.excerpt,
+      description: matchedArticle.metaDescription || matchedArticle.excerpt,
     };
   }
 
@@ -129,7 +118,7 @@ export function resolveRoute(rawPath: string): RouteResolution {
     path: '/home',
     title: 'Quietude — Essays on Sedatephobia & The Fear of Silence',
     description:
-      'An editorial journal exploring sedatephobia, background noise addiction, conversational dread, and the psychological architecture behind the fear of silence.',
+      'Struggling with the fear of silence or sedatephobia? Discover the root causes of quiet anxiety, white noise reliance, and simple steps to find lasting calm now.',
   };
 }
 

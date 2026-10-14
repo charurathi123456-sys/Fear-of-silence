@@ -58,6 +58,8 @@ export const HeroBookShowcase: React.FC<HeroBookShowcaseProps> = ({
                 e.preventDefault();
                 onOpenArticle(currentFolio);
               }}
+              title={`Read Folio ${currentFolio.chapterNumber}: ${currentFolio.title}`}
+              aria-label={`Read Folio ${currentFolio.chapterNumber}: ${currentFolio.title}`}
               className="flex items-center gap-2 px-6 py-3.5 bg-[#292524] text-[#FBF9F5] hover:bg-[#44403C] rounded-xl font-medium text-xs tracking-wider uppercase transition-all shadow-md hover:shadow-lg cursor-pointer group"
             >
               <span>Read Folio {currentFolio.chapterNumber}</span>
@@ -105,19 +107,21 @@ export const HeroBookShowcase: React.FC<HeroBookShowcaseProps> = ({
                 <div className="w-0 h-0 border-x-2.5 border-x-transparent border-t-3 border-t-[#FCFAF6]" />
               </div>
 
-              {/* Cover Plate / Human Photo with SEO metadata */}
+              {/* Cover Plate / Human Photo with SEO metadata & compact size */}
               <div className="ml-3 rounded-lg overflow-hidden border border-[#D8CEBD] bg-[#EDE5D5] shadow-inner">
-                <div className="h-56 sm:h-64 relative">
+                <div className="h-44 sm:h-52 relative">
                   <HumanImage
                     src={currentFolio.image.url}
                     alt={currentFolio.image.alt}
+                    fileName={currentFolio.image.fileName}
                     folioId={currentFolio.id}
                     className="w-full h-full"
                     imageClassName="group-hover:scale-105 transition-transform duration-500"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent pointer-events-none" />
-                  <div className="absolute bottom-2.5 left-3 text-[10px] font-mono uppercase tracking-widest text-[#FBF9F5] drop-shadow-md">
-                    FOLIO {currentFolio.chapterNumber} · {currentFolio.chapterCategory}
+                  <div className="absolute bottom-2.5 left-3 right-3 flex items-center justify-between text-[10px] font-mono uppercase tracking-widest text-[#FBF9F5] drop-shadow-md">
+                    <span>FOLIO {currentFolio.chapterNumber}</span>
+                    <span className="truncate max-w-[130px] lowercase text-white/90">{currentFolio.image.fileName}</span>
                   </div>
                 </div>
 

@@ -87,7 +87,7 @@ export default function App() {
 
     updatePageSeo({
       title: `${article.title} — Quietude`,
-      description: article.excerpt,
+      description: article.metaDescription || article.excerpt,
       path: cleanPath,
       type: 'article',
     });
@@ -103,7 +103,7 @@ export default function App() {
     updatePageSeo({
       title: 'Quietude — Essays on Sedatephobia & The Fear of Silence',
       description:
-        'An editorial journal exploring sedatephobia, background noise addiction, conversational dread, and the psychological architecture behind the fear of silence.',
+        'Struggling with the fear of silence or sedatephobia? Discover the root causes of quiet anxiety, white noise reliance, and simple steps to find lasting calm now.',
       path: ROUTE_PATHS.HOME,
       type: 'website',
     });
@@ -121,28 +121,28 @@ export default function App() {
     let targetPath: string = ROUTE_PATHS.HOME;
     let title = 'Quietude — Essays on Sedatephobia & The Fear of Silence';
     let description =
-      'An editorial journal exploring sedatephobia, background noise addiction, conversational dread, and the psychological architecture behind the fear of silence.';
+      'Struggling with the fear of silence or sedatephobia? Discover the root causes of quiet anxiety, white noise reliance, and simple steps to find lasting calm now.';
 
     if (view === 'catalog') {
       targetPath = ROUTE_PATHS.HOME;
       title = 'Quietude — Essays on Sedatephobia & The Fear of Silence';
       description =
-        'An editorial journal exploring sedatephobia, background noise addiction, conversational dread, and the psychological architecture behind the fear of silence.';
+        'Struggling with the fear of silence or sedatephobia? Discover the root causes of quiet anxiety, white noise reliance, and simple steps to find lasting calm now.';
     } else if (view === 'clinical') {
       targetPath = ROUTE_PATHS.CLINICAL_SCIENCE;
       title = 'Clinical & Science of Silence — Quietude';
       description =
-        'Explore neuroscience, central auditory gain in tinnitus, the Default Mode Network, and acoustic deprivation research from Orfield Laboratories.';
+        'Explore the clinical neuroscience behind the fear of silence, central auditory gain, tinnitus, and anechoic chamber research. Uncover what happens to you today.';
     } else if (view === 'acoustic') {
       targetPath = ROUTE_PATHS.ACOUSTIC_CULTURE;
       title = 'Acoustic Culture of Modern Life — Quietude';
       description =
-        'Cultural essays on 24/7 background audio, white noise addiction, awkward conversational pauses, and the smartphone reflex.';
+        'Why is modern society addicted to background noise? Examine the cultural shift from quiet rooms to constant podcasts and box fans. Read our in-depth essay now.';
     } else if (view === 'keywords') {
       targetPath = ROUTE_PATHS.SEARCH_KEYWORDS;
       title = 'Search Matrix & Keywords — Quietude';
       description =
-        'Discover top searched questions, queries, and high-intent terminology regarding sedatephobia and the fear of silence.';
+        'Explore the most searched queries and clinical terms on the fear of silence, sedatephobia, and noise addiction. Find answers to your pressing questions today.';
     }
 
     pushCleanUrl(targetPath);

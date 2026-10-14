@@ -10,6 +10,7 @@ export const ARTICLES: Article[] = [
     title: 'Fear of Silence Explained: Why Quiet Rooms Trigger Anxiety',
     subtitle: 'If sitting in a dead-quiet room makes your chest tighten, you are not crazy. Here is what is actually happening in your body.',
     excerpt: 'Ever walk into an empty house, turn off the television, and immediately feel a wave of unease? For millions of people, quietness doesn’t feel peaceful—it feels like an alarm bell. Psychologists call this sedatephobia, and it has a lot to do with how your brain handles safety.',
+    metaDescription: 'Why does silence trigger anxiety in an empty room? Understand how your nervous system misinterprets quiet as danger. Read the full guide to reclaim calm today.',
     readTime: '4 min read',
     wordCount: 890,
     seoKeywords: [
@@ -22,7 +23,8 @@ export const ARTICLES: Article[] = [
     primarySearchQuery: 'Why do I get anxious when it is completely silent?',
     publishedDate: 'Fresh Edition',
     image: {
-      url: 'https://images.unsplash.com/photo-1518495973542-4542c06a5843?w=1200&auto=format&fit=crop&q=80',
+      url: 'https://images.unsplash.com/photo-1518495973542-4542c06a5843?w=640&auto=format&fit=crop&q=75',
+      fileName: 'sedatephobia-quiet-room-anxiety.webp',
       alt: 'Young woman sitting peacefully near a sunlit window with a warm mug in a quiet beige living room',
       caption: 'When the outside world goes quiet, our internal volume often turns all the way up.',
       seoTarget: 'lifestyle photo of someone sitting alone in a quiet room feeling introspective'
@@ -79,6 +81,7 @@ export const ARTICLES: Article[] = [
     title: 'Background Noise for Sleep: Why Quiet Rooms Keep You Awake',
     subtitle: 'From box fans to 10-hour rain loops on YouTube: why so many of us need an auditory blanket to fall asleep.',
     excerpt: 'Do you need a fan running in winter just for the hum? Do you fall asleep to crime documentaries or re-runs of The Office? You aren’t weird—sound has become our favorite security blanket. Here is why it works so well, and what it says about our busy lives.',
+    metaDescription: 'Can’t sleep without a fan or podcast? Learn why white noise addiction forms, how it masks quiet anxiety, and gentle ways to rest peacefully. Click to read more.',
     readTime: '4 min read',
     wordCount: 920,
     seoKeywords: [
@@ -91,7 +94,8 @@ export const ARTICLES: Article[] = [
     primarySearchQuery: 'Why can’t I fall asleep without background noise or the TV on?',
     publishedDate: 'Fresh Edition',
     image: {
-      url: 'https://images.unsplash.com/photo-1541781774459-bb2af2f05b55?w=1200&auto=format&fit=crop&q=80',
+      url: 'https://images.unsplash.com/photo-1541781774459-bb2af2f05b55?w=640&auto=format&fit=crop&q=75',
+      fileName: 'white-noise-nighttime-sleep-aid.webp',
       alt: 'Cozy modern bedroom with warm beige linen bedding, soft pillows, and a gentle night lamp glow',
       caption: 'For millions, background audio acts as a gentle acoustic wall against nighttime worries.',
       seoTarget: 'person sleeping comfortably in cozy beige bed with soft ambient sound'
@@ -146,6 +150,7 @@ export const ARTICLES: Article[] = [
     title: 'Awkward Silence Anxiety: Why Conversation Pauses Terrify Us',
     subtitle: 'Why a 4-second pause in a conversation can make your palms sweat, and how confident people turn quiet pauses into power.',
     excerpt: 'You’re chatting with someone at lunch, the topic wraps up, and suddenly... nobody says anything. Your heart rate jumps. You search desperately for words. Why does a tiny pause in conversation feel so dangerous? Here is the secret behind conversational pauses and how to stay cool.',
+    metaDescription: 'Why does a 4-second pause in conversation feel agonizing? Discover the social psychology behind awkward silence anxiety and learn how to navigate pauses easily.',
     readTime: '4 min read',
     wordCount: 880,
     seoKeywords: [
@@ -158,7 +163,8 @@ export const ARTICLES: Article[] = [
     primarySearchQuery: 'Why do awkward silences make us feel so anxious and how do you fix it?',
     publishedDate: 'Fresh Edition',
     image: {
-      url: 'https://images.unsplash.com/photo-1517256064527-09c73fc73e38?w=1200&auto=format&fit=crop&q=80',
+      url: 'https://images.unsplash.com/photo-1517256064527-09c73fc73e38?w=640&auto=format&fit=crop&q=75',
+      fileName: 'awkward-silence-conversation-pause.webp',
       alt: 'Two people having coffee together across a rustic wooden table in a calm sunlit cafe',
       caption: 'A four-second pause between people can feel like an eternity—unless you know how to breathe through it.',
       seoTarget: 'two people talking over coffee in a calm cafe experiencing a conversational pause'
@@ -213,6 +219,7 @@ export const ARTICLES: Article[] = [
     title: 'Quietest Room on Earth: Why Nobody Can Survive Pure Silence',
     subtitle: 'At Orfield Labs, the room is so quiet it measures -9 decibels. Step inside, and your own heartbeat sounds like a bass drum.',
     excerpt: 'Could you sit in complete, absolute silence for an hour? At a famous lab in Minnesota, a specialized room absorbs 99.9% of all sound. Most people can’t last more than 45 minutes before begging to leave. Here is what happens when you take away every single external sound.',
+    metaDescription: 'In the -9.4 dB anechoic chamber, total silence feels deafening. Learn why extreme quiet triggers hallucinations and bodily echoes. Step inside the study now.',
     readTime: '5 min read',
     wordCount: 950,
     seoKeywords: [
@@ -225,7 +232,8 @@ export const ARTICLES: Article[] = [
     primarySearchQuery: 'What happens to a person in the quietest room on earth?',
     publishedDate: 'Fresh Edition',
     image: {
-      url: 'https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?w=1200&auto=format&fit=crop&q=80',
+      url: 'https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?w=640&auto=format&fit=crop&q=75',
+      fileName: 'orfield-anechoic-chamber-sound-wedges.webp',
       alt: 'Atmospheric acoustic room with soundproof architectural geometric foam wedges and ambient warm lighting',
       caption: 'In true acoustic isolation, your body becomes its own orchestra—complete with breathing, pulses, and ear ringing.',
       seoTarget: 'acoustic anechoic soundproof chamber with sound absorbing wedges'
@@ -281,6 +289,7 @@ export const ARTICLES: Article[] = [
     title: 'Tinnitus in Silence: Why Ear Ringing Gets Louder at Night',
     subtitle: 'Why the ringing in your ears seems ten times louder the moment your head hits the pillow—and how to calm it down.',
     excerpt: 'During a noisy day at work, you barely notice it. But at 2:00 AM in a pitch-black bedroom, that high-pitched ring sounds like a fire alarm in your head. Why does quiet make ear ringing so loud, and how can you fall asleep without dreading the silence?',
+    metaDescription: 'Does ear ringing get louder when your bedroom goes quiet? Learn how central auditory gain amplifies tinnitus in silence and find soothing relief strategies now.',
     readTime: '4 min read',
     wordCount: 890,
     seoKeywords: [
@@ -293,7 +302,8 @@ export const ARTICLES: Article[] = [
     primarySearchQuery: 'Why is my tinnitus so loud when the room is quiet?',
     publishedDate: 'Fresh Edition',
     image: {
-      url: 'https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=1200&auto=format&fit=crop&q=80',
+      url: 'https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=640&auto=format&fit=crop&q=75',
+      fileName: 'tinnitus-internal-ear-ringing-relief.webp',
       alt: 'Person sitting peacefully in quiet morning meditation in a warm sunlit room',
       caption: 'When background noise fades away, the brain amplifies its internal frequencies.',
       seoTarget: 'person sitting peacefully in bedroom with calm soft natural light'
@@ -348,6 +358,7 @@ export const ARTICLES: Article[] = [
     title: 'Fear of Empty Thoughts: Why You Can’t Sit Still in Silence',
     subtitle: 'Why having nothing to do for 15 minutes feels harder than running a marathon, and why filling every second became our default.',
     excerpt: 'Notice what you do when you have five free minutes. Do you look out the window? Or do you clean a counter, check your email, or wash another dish? In history, philosophers called the fear of empty space "horror vacui." Today, it is why we run ourselves ragged just to avoid sitting still.',
+    metaDescription: 'Why is sitting alone with your thoughts difficult? Discover the psychology of horror vacui, why stillness brings restlessness, and how to embrace quiet today.',
     readTime: '4 min read',
     wordCount: 870,
     seoKeywords: [
@@ -360,7 +371,8 @@ export const ARTICLES: Article[] = [
     primarySearchQuery: 'Why can’t I just sit still and be with my thoughts without feeling guilty or anxious?',
     publishedDate: 'Fresh Edition',
     image: {
-      url: 'https://images.unsplash.com/photo-1499209974431-9dddcece7f88?w=1200&auto=format&fit=crop&q=80',
+      url: 'https://images.unsplash.com/photo-1499209974431-9dddcece7f88?w=640&auto=format&fit=crop&q=75',
+      fileName: 'horror-vacui-empty-mind-restlessness.webp',
       alt: 'Person sitting on a cozy beige sofa looking out an open window holding a journal with morning coffee',
       caption: 'We fill our days with chores and screens because facing an empty moment feels surprisingly heavy.',
       seoTarget: 'person sitting peacefully on cozy sofa looking out window relaxing'
@@ -415,6 +427,7 @@ export const ARTICLES: Article[] = [
     title: 'Silence in Relationships: Peaceful Bond or Cold Shoulder?',
     subtitle: 'Why a quiet partner can trigger deep anxiety, and how to tell the difference between warm presence and the silent treatment.',
     excerpt: 'You’re sitting on the couch with your partner. They haven’t said a word in twenty minutes. Suddenly, your stomach drops: "Are they mad at me? Did I do something wrong?" Here is why silence in love can feel so confusing, and how to build cozy, comfortable quiet together.',
+    metaDescription: 'Is quiet between partners emotional safety or stonewalling? Decode the difference between tense silence and intimate stillness in your relationship right now.',
     readTime: '4 min read',
     wordCount: 880,
     seoKeywords: [
@@ -427,7 +440,8 @@ export const ARTICLES: Article[] = [
     primarySearchQuery: 'Why does my partner being quiet make me feel so anxious?',
     publishedDate: 'Fresh Edition',
     image: {
-      url: 'https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=1200&auto=format&fit=crop&q=80',
+      url: 'https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=640&auto=format&fit=crop&q=75',
+      fileName: 'comfortable-silence-relationship-intimacy.webp',
       alt: 'Couple enjoying a relaxed, comfortable moment together sitting on a warm neutral sofa reading',
       caption: 'Being able to share a quiet room without needing to talk is one of the highest signs of mutual trust.',
       seoTarget: 'couple sitting together on cozy sofa in comfortable quiet presence'
@@ -483,6 +497,7 @@ export const ARTICLES: Article[] = [
     title: 'Scrolling to Avoid Silence: Why Quiet Moments Trigger Phones',
     subtitle: 'Notice what you do at a red light or in an elevator: how screens became modern pacifiers against our own thoughts.',
     excerpt: 'Waiting for the microwave to beep? Standing in line at the grocery store? Sitting in an elevator for 12 seconds? Without thinking, your hand slides into your pocket, pulls out your phone, and begins scrolling. Here is why stillness makes us reach for a screen, and how to take back your attention.',
+    metaDescription: 'Why do you grab your phone the second an elevator or room gets quiet? Discover how doomscrolling masks stillness dread and how to break the reflex starting now.',
     readTime: '4 min read',
     wordCount: 860,
     seoKeywords: [
@@ -495,7 +510,8 @@ export const ARTICLES: Article[] = [
     primarySearchQuery: 'Why do I reach for my phone the moment things get quiet or boring?',
     publishedDate: 'Fresh Edition',
     image: {
-      url: 'https://images.unsplash.com/photo-1512436991641-6745cdb1723f?w=1200&auto=format&fit=crop&q=80',
+      url: 'https://images.unsplash.com/photo-1512436991641-6745cdb1723f?w=640&auto=format&fit=crop&q=75',
+      fileName: 'smartphone-scrolling-digital-pacifier.webp',
       alt: 'Person holding a smartphone thoughtfully while looking out a cozy warm window with soft sunlight',
       caption: 'The impulse to scroll is rarely about finding information—it is an escape from feeling empty.',
       seoTarget: 'person holding phone thoughtfully near warm window light'
@@ -550,6 +566,7 @@ export const ARTICLES: Article[] = [
     title: 'Overthinking in Silence: Why Your Brain Races at Bedtime',
     subtitle: 'Why the resting brain is not resting at all—and how to stop your mind from attacking you when the lights go out.',
     excerpt: 'You work hard all day, finally crawl into bed, and close your eyes. Instead of sweet sleep, your brain decides 11:45 PM is the perfect time to review every mistake you made in 2019. Brain scientists call this the Default Mode Network, and understanding it will change how you sleep.',
+    metaDescription: 'Why does your brain race the instant your head hits the pillow? Understand how nighttime silence activates the Default Mode Network and find restful calm today.',
     readTime: '4 min read',
     wordCount: 910,
     seoKeywords: [
@@ -562,7 +579,8 @@ export const ARTICLES: Article[] = [
     primarySearchQuery: 'Why does my brain start overthinking the second things get quiet?',
     publishedDate: 'Fresh Edition',
     image: {
-      url: 'https://images.unsplash.com/photo-1507652313519-d4e9174996dd?w=1200&auto=format&fit=crop&q=80',
+      url: 'https://images.unsplash.com/photo-1507652313519-d4e9174996dd?w=640&auto=format&fit=crop&q=75',
+      fileName: 'bedtime-overthinking-default-mode-network.webp',
       alt: 'Thoughtful person looking out a window with soft natural warm shadows resting their chin in their hand',
       caption: 'When you stop doing tasks, your resting brain kicks into high gear to review your past and future.',
       seoTarget: 'thoughtful person resting chin in hand looking out window thinking'
@@ -618,6 +636,7 @@ export const ARTICLES: Article[] = [
     title: 'How to Enjoy Silence: A Gentle 4-Step Guide to Inner Peace',
     subtitle: 'A gentle, step-by-step roadmap to overcome quiet phobia and make stillness your favorite sanctuary.',
     excerpt: 'You don’t overcome a lifelong fear of quiet by going to a silent meditation retreat for ten days. That is like trying to learn to swim in a hurricane. True peace comes from small, cozy steps that teach your body that stillness is warm, safe, and deeply restorative.',
+    metaDescription: 'Ready to make peace with stillness? Follow this 4-step desensitization guide to transform quiet anxiety into lasting inner peace. Start your soothing journey.',
     readTime: '5 min read',
     wordCount: 960,
     seoKeywords: [
@@ -630,7 +649,8 @@ export const ARTICLES: Article[] = [
     primarySearchQuery: 'How can I stop being afraid of silence and learn to enjoy quiet time?',
     publishedDate: 'Fresh Edition',
     image: {
-      url: 'https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=1200&auto=format&fit=crop&q=80',
+      url: 'https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=640&auto=format&fit=crop&q=75',
+      fileName: 'reclaiming-stillness-mindfulness-practice.webp',
       alt: 'Person sitting peacefully in morning sunlight with eyes closed taking a gentle refreshing breath',
       caption: 'Stillness is not an empty desert—it is a warm, spacious room where you can finally relax.',
       seoTarget: 'person taking a deep mindful breath in warm morning sunlight'

@@ -38,6 +38,8 @@ export const Header: React.FC<HeaderProps> = ({
         <a
           href={ROUTE_PATHS.HOME}
           onClick={(e) => handleLinkClick(e, 'catalog')}
+          title="Quietude — Return to Home"
+          aria-label="Quietude Journal of Silence — Return to Home"
           className="text-left group flex items-baseline gap-2 cursor-pointer focus:outline-none"
         >
           <span className="font-editorial text-2xl sm:text-3xl font-normal tracking-tight text-[#1C1917] group-hover:text-[#7A5C3E] transition-colors">

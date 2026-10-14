@@ -111,6 +111,8 @@ export const ReaderView: React.FC<ReaderViewProps> = ({
               e.preventDefault();
               onBackToCatalog();
             }}
+            title="Return to Quietude Volume Index"
+            aria-label="Return to Quietude Volume Index"
             className="flex items-center gap-1.5 text-[#5C5346] hover:text-[#1C1917] font-medium transition-colors cursor-pointer"
           >
             <ArrowLeft className="w-3.5 h-3.5" />
@@ -231,25 +233,31 @@ export const ReaderView: React.FC<ReaderViewProps> = ({
 
           {/* Book Header Matter */}
           <header className="border-b border-[#EAE3D6] pb-8 mb-10">
-            {/* Real Humanized Hero Plate */}
-            <div className="relative mb-6 rounded-xl overflow-hidden border border-[#E7E0D3] shadow-md bg-[#EDE5D5]">
-              <div className="h-64 sm:h-80 lg:h-96 w-full">
-                <HumanImage
-                  src={article.image.url}
-                  alt={article.image.alt}
-                  folioId={article.id}
-                  className="w-full h-full"
-                />
+            {/* Real Humanized Hero Plate (Shrunk small in size & formatted) */}
+            <div className="max-w-xl mx-auto mb-6">
+              <div className="relative rounded-xl overflow-hidden border border-[#E7E0D3] shadow-sm bg-[#EDE5D5]">
+                <div className="h-48 sm:h-60 w-full">
+                  <HumanImage
+                    src={article.image.url}
+                    alt={article.image.alt}
+                    fileName={article.image.fileName}
+                    folioId={article.id}
+                    className="w-full h-full"
+                  />
+                </div>
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent pointer-events-none" />
+                <div className="absolute bottom-2.5 left-3 right-3 flex items-center justify-between text-[10px] font-mono text-[#FBF9F5] drop-shadow-md">
+                  <span>FOLIO {article.chapterNumber} · PHOTO ESSAY</span>
+                  <span className="bg-black/50 px-1.5 py-0.5 rounded text-[9px]">{article.image.fileName}</span>
+                </div>
               </div>
-              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent pointer-events-none" />
-              <div className="absolute bottom-3 left-4 right-4 flex items-center justify-between text-[11px] font-mono text-[#FBF9F5] drop-shadow-md">
-                <span>FOLIO {article.chapterNumber} · PHOTO ESSAY</span>
-                <span className="hidden sm:inline">SEO TARGET: {article.seoKeywords[0]}</span>
+              <div className="mt-2 text-center text-xs text-[#7A7062] font-reading italic">
+                <span>{article.image.caption}</span>
+                <span className="block text-[10px] font-mono not-italic text-[#8C8275] mt-0.5">
+                  File: {article.image.fileName} · Alt: {article.image.alt}
+                </span>
               </div>
             </div>
-            <p className="text-xs text-[#7A7062] font-reading italic text-center mb-6">
-              {article.image.caption}
-            </p>
 
             <div className="flex flex-wrap items-center gap-2 text-xs uppercase tracking-widest text-[#8C8275] mb-4 font-mono">
               <span>FOLIO {article.chapterNumber}</span>
@@ -398,7 +406,62 @@ export const ReaderView: React.FC<ReaderViewProps> = ({
             </button>
           </div>
 
-          {/* Book Folio Navigation (Previous / Next Pages) */}
+          {/* Verified External Citations & Scientific Reference Links */}
+          <section className="mt-12 pt-8 border-t border-[#EAE3D6] bg-[#FAF8F5] p-5 sm:p-6 rounded-xl border">
+            <h5 className="font-mono text-xs uppercase tracking-wider text-[#7A5C3E] mb-3 flex items-center gap-2">
+              <Compass className="w-3.5 h-3.5 text-[#936B45]" />
+              <span>External Citations & Primary Literature</span>
+            </h5>
+            <ul className="space-y-2.5 text-xs text-[#524B40]">
+              <li className="flex items-start gap-2">
+                <span className="text-[#936B45] font-mono">01.</span>
+                <div>
+                  <a
+                    href="https://orfieldlabs.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    title="Orfield Laboratories Acoustic Architecture Research"
+                    className="font-medium text-[#1C1917] hover:text-[#7A5C3E] underline decoration-[#C4B7A2] hover:decoration-[#7A5C3E]"
+                  >
+                    Orfield Laboratories Anechoic Acoustics Archive
+                  </a>
+                  <span className="text-[#7A7062]"> — Research on the -9.4 dBA quiet threshold and human sensory deprivation.</span>
+                </div>
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="text-[#936B45] font-mono">02.</span>
+                <div>
+                  <a
+                    href="https://www.apa.org/topics/anxiety"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    title="American Psychological Association Anxiety & Phobia Research"
+                    className="font-medium text-[#1C1917] hover:text-[#7A5C3E] underline decoration-[#C4B7A2] hover:decoration-[#7A5C3E]"
+                  >
+                    American Psychological Association (APA) Clinical Guides
+                  </a>
+                  <span className="text-[#7A7062]"> — Diagnostics regarding sedatephobia, sensory over-monitoring, and anxiety loops.</span>
+                </div>
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="text-[#936B45] font-mono">03.</span>
+                <div>
+                  <a
+                    href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4923834/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    title="National Institutes of Health Auditory Gain and Tinnitus Studies"
+                    className="font-medium text-[#1C1917] hover:text-[#7A5C3E] underline decoration-[#C4B7A2] hover:decoration-[#7A5C3E]"
+                  >
+                    National Center for Biotechnology Information (NCBI / NIH)
+                  </a>
+                  <span className="text-[#7A7062]"> — Studies on Central Auditory Gain in quiet environments and resting brain networks.</span>
+                </div>
+              </li>
+            </ul>
+          </section>
+
+          {/* Book Folio Navigation (Previous / Next Pages) with explicit anchor text */}
           <nav className="mt-14 pt-8 border-t border-[#EAE3D6] grid grid-cols-1 sm:grid-cols-2 gap-4">
             {prevArticle ? (
               <a
@@ -407,6 +470,8 @@ export const ReaderView: React.FC<ReaderViewProps> = ({
                   e.preventDefault();
                   onSelectArticle(prevArticle);
                 }}
+                title={`Read Previous Folio ${prevArticle.chapterNumber}: ${prevArticle.title}`}
+                aria-label={`Read Previous Folio ${prevArticle.chapterNumber}: ${prevArticle.title}`}
                 className="group flex flex-col p-4 bg-[#FAF7F0] hover:bg-[#F4EFE6] border border-[#E7E0D3] rounded text-left transition-colors cursor-pointer"
               >
                 <div className="flex items-center gap-1.5 text-xs text-[#8C8275] uppercase font-mono mb-1">
@@ -414,7 +479,7 @@ export const ReaderView: React.FC<ReaderViewProps> = ({
                   <span>Previous Folio {prevArticle.chapterNumber}</span>
                 </div>
                 <span className="font-editorial text-base text-[#1C1917] group-hover:text-[#936B45] transition-colors line-clamp-1">
-                  {prevArticle.title}
+                  Read Folio {prevArticle.chapterNumber}: {prevArticle.title}
                 </span>
               </a>
             ) : (
@@ -428,6 +493,8 @@ export const ReaderView: React.FC<ReaderViewProps> = ({
                   e.preventDefault();
                   onSelectArticle(nextArticle);
                 }}
+                title={`Read Next Folio ${nextArticle.chapterNumber}: ${nextArticle.title}`}
+                aria-label={`Read Next Folio ${nextArticle.chapterNumber}: ${nextArticle.title}`}
                 className="group flex flex-col p-4 bg-[#FAF7F0] hover:bg-[#F4EFE6] border border-[#E7E0D3] rounded text-right transition-colors cursor-pointer sm:ml-auto w-full"
               >
                 <div className="flex items-center justify-end gap-1.5 text-xs text-[#8C8275] uppercase font-mono mb-1">
@@ -435,7 +502,7 @@ export const ReaderView: React.FC<ReaderViewProps> = ({
                   <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
                 </div>
                 <span className="font-editorial text-base text-[#1C1917] group-hover:text-[#936B45] transition-colors line-clamp-1">
-                  {nextArticle.title}
+                  Read Folio {nextArticle.chapterNumber}: {nextArticle.title}
                 </span>
               </a>
             )}

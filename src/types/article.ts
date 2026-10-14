@@ -9,6 +9,7 @@ export interface ArticleSection {
 export interface ArticleImage {
   url: string;
   alt: string;
+  fileName: string;
   caption: string;
   seoTarget: string;
 }
@@ -22,6 +23,7 @@ export interface Article {
   title: string;
   subtitle: string;
   excerpt: string;
+  metaDescription: string;
   readTime: string;
   wordCount: number;
   seoKeywords: string[];

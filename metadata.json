@@ -1,6 +1,6 @@
 {
   "name": "Quietude — Fear of Silence Editorial Journal",
-  "description": "An editorial blog and interactive reading room investigating sedatephobia, white noise reliance, conversational dread, and the modern psychology of silence.",
+  "description": "Struggling with the fear of silence or sedatephobia? Discover the root causes of quiet anxiety, white noise reliance, and simple steps to find lasting calm now.",
   "requestFramePermissions": [],
   "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
 }

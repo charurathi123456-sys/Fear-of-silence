@@ -41,11 +41,12 @@ export const BookCard: React.FC<BookCardProps> = ({
       {/* Decorative Book Spine Stitch / Left Margin */}
       <div className="absolute top-0 bottom-0 left-0 w-2 bg-[#D8CEBD] group-hover:bg-[#936B45] transition-colors z-10" />
 
-      {/* Real Humanized Image Banner with SEO Alt Tags */}
-      <div className={`relative overflow-hidden bg-[#EDE5D5] ${isFeatured ? 'h-64 sm:h-76' : 'h-52'}`}>
+      {/* Real Humanized Image Banner with SEO Alt Tags & File Name */}
+      <div className={`relative overflow-hidden bg-[#EDE5D5] ${isFeatured ? 'h-52 sm:h-60' : 'h-40 sm:h-44'}`}>
         <HumanImage
           src={article.image.url}
           alt={article.image.alt}
+          fileName={article.image.fileName}
           folioId={article.id}
           className="w-full h-full"
           imageClassName="group-hover:scale-105 transition-transform duration-500 ease-out"
@@ -53,9 +54,11 @@ export const BookCard: React.FC<BookCardProps> = ({
         {/* Subtle Paper Scrim & Bookplate Vignette */}
         <div className="absolute inset-0 bg-gradient-to-t from-[#FCFAF6] via-transparent to-black/20 opacity-80" />
 
-        {/* Floating Folio Badge */}
-        <div className="absolute top-3 left-5 z-10 bg-[#FAF8F5]/95 backdrop-blur-xs px-2.5 py-1 rounded border border-[#DDD5C5] text-[10px] font-mono tracking-widest uppercase text-[#523F2B] shadow-xs">
-          FOLIO {article.chapterNumber}
+        {/* Floating Folio Badge with File Tag */}
+        <div className="absolute top-3 left-5 z-10 flex items-center gap-1.5 bg-[#FAF8F5]/95 backdrop-blur-xs px-2 py-0.5 rounded border border-[#DDD5C5] text-[10px] font-mono tracking-widest uppercase text-[#523F2B] shadow-xs">
+          <span>FOLIO {article.chapterNumber}</span>
+          <span className="hidden sm:inline text-[#A39889]">·</span>
+          <span className="hidden sm:inline text-[9px] text-[#7A7062] lowercase">{article.image.fileName}</span>
         </div>
 
         {/* Bookmark ribbon */}
@@ -67,7 +70,7 @@ export const BookCard: React.FC<BookCardProps> = ({
               : 'bg-[#FAF8F5]/85 text-[#736A5E] hover:text-[#292524] hover:bg-[#FAF8F5]'
           }`}
           title={isSaved ? 'Remove from Reading Shelf' : 'Save to Reading Shelf'}
-          aria-label={isSaved ? 'Bookmarked' : 'Bookmark'}
+          aria-label={isSaved ? `Remove Folio ${article.chapterNumber} bookmark` : `Bookmark Folio ${article.chapterNumber}`}
         >
           <Bookmark className="w-3.5 h-3.5" fill={isSaved ? 'currentColor' : 'none'} />
         </button>
@@ -148,9 +151,11 @@ export const BookCard: React.FC<BookCardProps> = ({
                 e.preventDefault();
                 onOpenArticle(article);
               }}
+              title={`Read Folio ${article.chapterNumber}: ${article.title}`}
+              aria-label={`Read Folio ${article.chapterNumber}: ${article.title}`}
               className="flex items-center gap-1 font-medium text-[#292524] group-hover:text-[#936B45] transition-colors focus:outline-none"
             >
-              <span>Open Folio</span>
+              <span>Read Folio {article.chapterNumber}</span>
               <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
             </a>
           </div>

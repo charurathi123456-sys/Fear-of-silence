@@ -86,6 +86,8 @@ export const KeywordExplorer: React.FC<KeywordExplorerProps> = ({
                 e.preventDefault();
                 onSelectArticle(article);
               }}
+              title={`Read Folio ${article.chapterNumber}: ${article.title}`}
+              aria-label={`Read Folio ${article.chapterNumber}: ${article.title}`}
               className="group flex items-center justify-between p-4 bg-[#FCFAF6] hover:bg-[#FAF6EE] border border-[#E7E0D3] hover:border-[#C4B7A2] rounded-xl cursor-pointer transition-all duration-200 book-shadow hover:-translate-y-0.5 text-left block"
             >
               <div className="flex items-center gap-4 pr-2">
@@ -93,6 +95,7 @@ export const KeywordExplorer: React.FC<KeywordExplorerProps> = ({
                   <HumanImage
                     src={article.image.url}
                     alt={article.image.alt}
+                    fileName={article.image.fileName}
                     folioId={article.id}
                     className="w-full h-full"
                     imageClassName="group-hover:scale-110 transition-transform duration-300"

@@ -39,13 +39,16 @@ export const FolioGalleryStrip: React.FC<FolioGalleryStripProps> = ({
               e.preventDefault();
               onSelectArticle(article);
             }}
+            title={`Read Folio ${article.chapterNumber}: ${article.title}`}
+            aria-label={`Read Folio ${article.chapterNumber}: ${article.title}`}
             className="group shrink-0 w-64 sm:w-72 bg-[#FCFAF6] hover:bg-[#FAF7F0] border border-[#E7E0D3] hover:border-[#936B45] rounded-xl overflow-hidden book-shadow cursor-pointer transition-all duration-300 hover:-translate-y-1 snap-start text-left block"
           >
             {/* Visual Plate Header */}
-            <div className="h-44 relative bg-[#EDE5D5] overflow-hidden">
+            <div className="h-36 sm:h-40 relative bg-[#EDE5D5] overflow-hidden">
               <HumanImage
                 src={article.image.url}
                 alt={article.image.alt}
+                fileName={article.image.fileName}
                 folioId={article.id}
                 className="w-full h-full"
                 imageClassName="group-hover:scale-105 transition-transform duration-500"
@@ -53,6 +56,9 @@ export const FolioGalleryStrip: React.FC<FolioGalleryStripProps> = ({
               <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent pointer-events-none" />
               <div className="absolute top-2.5 left-3 bg-[#FAF8F5]/90 px-2 py-0.5 rounded text-[10px] font-mono uppercase text-[#443F37]">
                 FOLIO {article.chapterNumber}
+              </div>
+              <div className="absolute bottom-2 right-2 text-[9px] font-mono text-white/90 bg-black/60 px-1.5 py-0.5 rounded">
+                {article.image.fileName}
               </div>
             </div>
 
@@ -69,7 +75,7 @@ export const FolioGalleryStrip: React.FC<FolioGalleryStripProps> = ({
               </p>
               <div className="text-[11px] font-mono text-[#936B45] font-medium flex items-center justify-between pt-2 border-t border-[#EAE3D6]">
                 <span>{article.readTime}</span>
-                <span className="group-hover:underline">Read →</span>
+                <span className="group-hover:underline">Read Folio {article.chapterNumber} →</span>
               </div>
             </div>
           </a>

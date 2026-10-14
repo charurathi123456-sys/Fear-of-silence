@@ -216,6 +216,32 @@ export const CatalogView: React.FC<CatalogViewProps> = ({
             <span>·</span>
             <span>Alabaster & Parchment Edition</span>
           </div>
+
+          <div className="pt-4 flex flex-wrap items-center justify-center gap-4 text-xs font-sans">
+            <a
+              href="/clinical-science"
+              className="text-[#7A5C3E] hover:underline font-medium"
+              title="Explore Clinical Neuroscience on Silence"
+            >
+              Explore Clinical Science
+            </a>
+            <span className="text-[#C4B7A2]">·</span>
+            <a
+              href="/acoustic-culture"
+              className="text-[#7A5C3E] hover:underline font-medium"
+              title="Explore Acoustic Culture and Noise Dependency"
+            >
+              Explore Acoustic Culture
+            </a>
+            <span className="text-[#C4B7A2]">·</span>
+            <a
+              href="/search-keywords"
+              className="text-[#7A5C3E] hover:underline font-medium"
+              title="Explore Search Matrix and High-Intent Keywords"
+            >
+              Browse Search Matrix
+            </a>
+          </div>
         </div>
       </footer>
     </div>
