@@ -23,8 +23,9 @@ export const ARTICLES: Article[] = [
     primarySearchQuery: 'Why do I get anxious when it is completely silent?',
     publishedDate: 'Fresh Edition',
     image: {
-      url: 'https://images.unsplash.com/photo-1518495973542-4542c06a5843?w=640&auto=format&fit=crop&q=75',
+      url: '/images/sedatephobia-quiet-room-anxiety.webp',
       fileName: 'sedatephobia-quiet-room-anxiety.webp',
+      fileSizeKb: 55,
       alt: 'Young woman sitting peacefully near a sunlit window with a warm mug in a quiet beige living room',
       caption: 'When the outside world goes quiet, our internal volume often turns all the way up.',
       seoTarget: 'lifestyle photo of someone sitting alone in a quiet room feeling introspective'
@@ -97,8 +98,9 @@ export const ARTICLES: Article[] = [
     primarySearchQuery: 'Why can’t I fall asleep without background noise or the TV on?',
     publishedDate: 'Fresh Edition',
     image: {
-      url: 'https://images.unsplash.com/photo-1541781774459-bb2af2f05b55?w=640&auto=format&fit=crop&q=75',
+      url: '/images/white-noise-nighttime-sleep-aid.webp',
       fileName: 'white-noise-nighttime-sleep-aid.webp',
+      fileSizeKb: 16,
       alt: 'Cozy modern bedroom with warm beige linen bedding, soft pillows, and a gentle night lamp glow',
       caption: 'For millions, background audio acts as a gentle acoustic wall against nighttime worries.',
       seoTarget: 'person sleeping comfortably in cozy beige bed with soft ambient sound'
@@ -169,8 +171,9 @@ export const ARTICLES: Article[] = [
     primarySearchQuery: 'Why do awkward silences make us feel so anxious and how do you fix it?',
     publishedDate: 'Fresh Edition',
     image: {
-      url: 'https://images.unsplash.com/photo-1517256064527-09c73fc73e38?w=640&auto=format&fit=crop&q=75',
+      url: '/images/awkward-silence-conversation-pause.webp',
       fileName: 'awkward-silence-conversation-pause.webp',
+      fileSizeKb: 34,
       alt: 'Two people having coffee together across a rustic wooden table in a calm sunlit cafe',
       caption: 'A four-second pause between people can feel like an eternity—unless you know how to breathe through it.',
       seoTarget: 'two people talking over coffee in a calm cafe experiencing a conversational pause'
@@ -241,8 +244,9 @@ export const ARTICLES: Article[] = [
     primarySearchQuery: 'What happens to a person in the quietest room on earth?',
     publishedDate: 'Fresh Edition',
     image: {
-      url: 'https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?w=640&auto=format&fit=crop&q=75',
+      url: '/images/orfield-anechoic-chamber-sound-wedges.webp',
       fileName: 'orfield-anechoic-chamber-sound-wedges.webp',
+      fileSizeKb: 24,
       alt: 'Atmospheric acoustic room with soundproof architectural geometric foam wedges and ambient warm lighting',
       caption: 'In true acoustic isolation, your body becomes its own orchestra—complete with breathing, pulses, and ear ringing.',
       seoTarget: 'acoustic anechoic soundproof chamber with sound absorbing wedges'
@@ -314,8 +318,9 @@ export const ARTICLES: Article[] = [
     primarySearchQuery: 'Why is my tinnitus so loud when the room is quiet?',
     publishedDate: 'Fresh Edition',
     image: {
-      url: 'https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=640&auto=format&fit=crop&q=75',
+      url: '/images/tinnitus-internal-ear-ringing-relief.webp',
       fileName: 'tinnitus-internal-ear-ringing-relief.webp',
+      fileSizeKb: 46,
       alt: 'Person sitting peacefully in quiet morning meditation in a warm sunlit room',
       caption: 'When background noise fades away, the brain amplifies its internal frequencies.',
       seoTarget: 'person sitting peacefully in bedroom with calm soft natural light'
@@ -386,8 +391,9 @@ export const ARTICLES: Article[] = [
     primarySearchQuery: 'Why can’t I just sit still and be with my thoughts without feeling guilty or anxious?',
     publishedDate: 'Fresh Edition',
     image: {
-      url: 'https://images.unsplash.com/photo-1499209974431-9dddcece7f88?w=640&auto=format&fit=crop&q=75',
+      url: '/images/horror-vacui-empty-mind-restlessness.webp',
       fileName: 'horror-vacui-empty-mind-restlessness.webp',
+      fileSizeKb: 13,
       alt: 'Person sitting on a cozy beige sofa looking out an open window holding a journal with morning coffee',
       caption: 'We fill our days with chores and screens because facing an empty moment feels surprisingly heavy.',
       seoTarget: 'person sitting peacefully on cozy sofa looking out window relaxing'
@@ -458,8 +464,9 @@ export const ARTICLES: Article[] = [
     primarySearchQuery: 'Why does my partner being quiet make me feel so anxious?',
     publishedDate: 'Fresh Edition',
     image: {
-      url: 'https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=640&auto=format&fit=crop&q=75',
+      url: '/images/comfortable-silence-relationship-intimacy.webp',
       fileName: 'comfortable-silence-relationship-intimacy.webp',
+      fileSizeKb: 25,
       alt: 'Couple enjoying a relaxed, comfortable moment together sitting on a warm neutral sofa reading',
       caption: 'Being able to share a quiet room without needing to talk is one of the highest signs of mutual trust.',
       seoTarget: 'couple sitting together on cozy sofa in comfortable quiet presence'
@@ -530,8 +537,9 @@ export const ARTICLES: Article[] = [
     primarySearchQuery: 'Why do I reach for my phone the moment things get quiet or boring?',
     publishedDate: 'Fresh Edition',
     image: {
-      url: 'https://images.unsplash.com/photo-1512436991641-6745cdb1723f?w=640&auto=format&fit=crop&q=75',
+      url: '/images/smartphone-scrolling-digital-pacifier.webp',
       fileName: 'smartphone-scrolling-digital-pacifier.webp',
+      fileSizeKb: 40,
       alt: 'Person holding a smartphone thoughtfully while looking out a cozy warm window with soft sunlight',
       caption: 'The impulse to scroll is rarely about finding information—it is an escape from feeling empty.',
       seoTarget: 'person holding phone thoughtfully near warm window light'
@@ -602,8 +610,9 @@ export const ARTICLES: Article[] = [
     primarySearchQuery: 'Why does my brain start overthinking the second things get quiet?',
     publishedDate: 'Fresh Edition',
     image: {
-      url: 'https://images.unsplash.com/photo-1507652313519-d4e9174996dd?w=640&auto=format&fit=crop&q=75',
+      url: '/images/bedtime-overthinking-default-mode-network.webp',
       fileName: 'bedtime-overthinking-default-mode-network.webp',
+      fileSizeKb: 31,
       alt: 'Thoughtful person looking out a window with soft natural warm shadows resting their chin in their hand',
       caption: 'When you stop doing tasks, your resting brain kicks into high gear to review your past and future.',
       seoTarget: 'thoughtful person resting chin in hand looking out window thinking'
@@ -675,8 +684,9 @@ export const ARTICLES: Article[] = [
     primarySearchQuery: 'How can I stop being afraid of silence and learn to enjoy quiet time?',
     publishedDate: 'Fresh Edition',
     image: {
-      url: 'https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=640&auto=format&fit=crop&q=75',
+      url: '/images/reclaiming-stillness-mindfulness-practice.webp',
       fileName: 'reclaiming-stillness-mindfulness-practice.webp',
+      fileSizeKb: 46,
       alt: 'Person sitting peacefully in morning sunlight with eyes closed taking a gentle refreshing breath',
       caption: 'Stillness is not an empty desert—it is a warm, spacious room where you can finally relax.',
       seoTarget: 'person taking a deep mindful breath in warm morning sunlight'

@@ -52,6 +52,7 @@ export const FolioGalleryStrip: React.FC<FolioGalleryStripProps> = ({
                 src={article.image.url}
                 alt={article.image.alt}
                 fileName={article.image.fileName}
+                fileSizeKb={article.image.fileSizeKb}
                 folioId={article.id}
                 className="w-full h-full"
                 imageClassName="group-hover:scale-105 transition-transform duration-500"
@@ -61,7 +62,7 @@ export const FolioGalleryStrip: React.FC<FolioGalleryStripProps> = ({
                 FOLIO {article.chapterNumber}
               </div>
               <div className="absolute bottom-2 right-2 text-[9px] font-mono text-white/90 bg-black/60 px-1.5 py-0.5 rounded">
-                {article.image.fileName}
+                {article.image.fileName} ({article.image.fileSizeKb || 55} KB)
               </div>
             </div>
 

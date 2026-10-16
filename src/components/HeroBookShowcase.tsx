@@ -124,6 +124,7 @@ export const HeroBookShowcase: React.FC<HeroBookShowcaseProps> = ({
                     src={currentFolio.image.url}
                     alt={currentFolio.image.alt}
                     fileName={currentFolio.image.fileName}
+                    fileSizeKb={currentFolio.image.fileSizeKb}
                     folioId={currentFolio.id}
                     className="w-full h-full"
                     imageClassName="group-hover:scale-105 transition-transform duration-500"
@@ -131,7 +132,9 @@ export const HeroBookShowcase: React.FC<HeroBookShowcaseProps> = ({
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent pointer-events-none" />
                   <div className="absolute bottom-2.5 left-3 right-3 flex items-center justify-between text-[10px] font-mono uppercase tracking-widest text-[#FBF9F5] drop-shadow-md">
                     <span>FOLIO {currentFolio.chapterNumber}</span>
-                    <span className="truncate max-w-[130px] lowercase text-white/90">{currentFolio.image.fileName}</span>
+                    <span className="truncate max-w-[150px] lowercase text-white/90">
+                      {currentFolio.image.fileName} ({currentFolio.image.fileSizeKb || 55} KB)
+                    </span>
                   </div>
                 </div>
 

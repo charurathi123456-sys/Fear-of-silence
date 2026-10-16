@@ -115,6 +115,7 @@ export const KeywordExplorer: React.FC<KeywordExplorerProps> = ({
                     src={article.image.url}
                     alt={article.image.alt}
                     fileName={article.image.fileName}
+                    fileSizeKb={article.image.fileSizeKb}
                     folioId={article.id}
                     className="w-full h-full"
                     imageClassName="group-hover:scale-110 transition-transform duration-300"

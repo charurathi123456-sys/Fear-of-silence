@@ -47,6 +47,7 @@ export const BookCard: React.FC<BookCardProps> = ({
           src={article.image.url}
           alt={article.image.alt}
           fileName={article.image.fileName}
+          fileSizeKb={article.image.fileSizeKb}
           folioId={article.id}
           className="w-full h-full"
           imageClassName="group-hover:scale-105 transition-transform duration-500 ease-out"
@@ -58,7 +59,9 @@ export const BookCard: React.FC<BookCardProps> = ({
         <div className="absolute top-3 left-5 z-10 flex items-center gap-1.5 bg-[#FAF8F5]/95 backdrop-blur-xs px-2 py-0.5 rounded border border-[#DDD5C5] text-[10px] font-mono tracking-widest uppercase text-[#523F2B] shadow-xs">
           <span>FOLIO {article.chapterNumber}</span>
           <span className="hidden sm:inline text-[#A39889]">·</span>
-          <span className="hidden sm:inline text-[9px] text-[#7A7062] lowercase">{article.image.fileName}</span>
+          <span className="hidden sm:inline text-[9px] text-[#7A7062] lowercase">
+            {article.image.fileName} ({article.image.fileSizeKb || 55} KB)
+          </span>
         </div>
 
         {/* Bookmark ribbon */}

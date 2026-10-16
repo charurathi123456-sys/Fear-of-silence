@@ -280,6 +280,7 @@ export const ReaderView: React.FC<ReaderViewProps> = ({
                     src={article.image.url}
                     alt={article.image.alt}
                     fileName={article.image.fileName}
+                    fileSizeKb={article.image.fileSizeKb}
                     folioId={article.id}
                     className="w-full h-full"
                   />
@@ -287,13 +288,15 @@ export const ReaderView: React.FC<ReaderViewProps> = ({
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent pointer-events-none" />
                 <div className="absolute bottom-2.5 left-3 right-3 flex items-center justify-between text-[10px] font-mono text-[#FBF9F5] drop-shadow-md">
                   <span>FOLIO {article.chapterNumber} · PHOTO ESSAY</span>
-                  <span className="bg-black/50 px-1.5 py-0.5 rounded text-[9px]">{article.image.fileName}</span>
+                  <span className="bg-black/50 px-1.5 py-0.5 rounded text-[9px]">
+                    {article.image.fileName} ({article.image.fileSizeKb || 55} KB)
+                  </span>
                 </div>
               </div>
               <div className="mt-2 text-center text-xs text-[#7A7062] font-reading italic">
                 <span>{article.image.caption}</span>
                 <span className="block text-[10px] font-mono not-italic text-[#8C8275] mt-0.5">
-                  File: {article.image.fileName} · Alt: {article.image.alt}
+                  File: {article.image.fileName} ({article.image.fileSizeKb || 55} KB &lt; 100 KB) · Alt: {article.image.alt}
                 </span>
               </div>
             </div>
