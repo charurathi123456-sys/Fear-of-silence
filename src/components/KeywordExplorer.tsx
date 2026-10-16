@@ -191,22 +191,58 @@ export const KeywordExplorer: React.FC<KeywordExplorerProps> = ({
                   e.preventDefault();
                   onSelectArticle(article);
                 }}
-                className="p-5 bg-[#FCFAF6] border border-[#E7E0D3] hover:border-[#936B45] rounded-lg cursor-pointer transition-colors text-left block"
+                title={`Read Folio ${article.chapterNumber}: ${article.title}`}
+                className="group p-5 bg-[#FCFAF6] border border-[#E7E0D3] hover:border-[#936B45] rounded-xl cursor-pointer transition-colors text-left block book-shadow"
               >
                 <span className="font-mono text-[10px] text-[#8C8275] block mb-1">
                   FOLIO {article.chapterNumber} · {article.readTime}
                 </span>
-                <h4 className="font-editorial text-lg text-[#1C1917] hover:text-[#936B45] mb-2 leading-snug">
+                <h4 className="font-editorial text-lg text-[#1C1917] group-hover:text-[#936B45] mb-2 leading-snug">
                   {article.title}
                 </h4>
-                <p className="font-reading text-xs text-[#524B40] line-clamp-2">
+                <p className="font-reading text-xs text-[#524B40] line-clamp-2 mb-2">
                   {article.excerpt}
                 </p>
+                <span className="text-xs font-medium text-[#7A5C3E] underline decoration-[#C4B7A2] group-hover:decoration-[#7A5C3E]">
+                  Read full folio: {article.title} &rarr;
+                </span>
               </a>
             ))}
           </div>
         </section>
       )}
+
+      {/* Internal Navigation Directory */}
+      <footer className="mt-16 pt-8 border-t border-[#EAE3D6] text-center text-xs text-[#7A7062]">
+        <p className="mb-3 font-reading text-sm text-[#5C5346]">
+          Looking for deeper scientific breakdowns or cultural essays?
+        </p>
+        <div className="flex flex-wrap items-center justify-center gap-4">
+          <a
+            href="/home"
+            title="Return to Quietude Editorial Monograph Library"
+            className="text-[#7A5C3E] hover:underline font-medium"
+          >
+            Quietude Monograph Library
+          </a>
+          <span className="text-[#C4B7A2]">·</span>
+          <a
+            href="/clinical-science"
+            title="Explore Clinical Science and Brain Research"
+            className="text-[#7A5C3E] hover:underline font-medium"
+          >
+            Clinical Science & Neuroscience Atlas
+          </a>
+          <span className="text-[#C4B7A2]">·</span>
+          <a
+            href="/acoustic-culture"
+            title="Explore Acoustic Culture and Modern Habits"
+            className="text-[#7A5C3E] hover:underline font-medium"
+          >
+            Acoustic Culture of Modern Life
+          </a>
+        </div>
+      </footer>
     </div>
   );
 };

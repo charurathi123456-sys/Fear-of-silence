@@ -100,6 +100,7 @@ export const BookCard: React.FC<BookCardProps> = ({
                 e.preventDefault();
                 onOpenArticle(article);
               }}
+              title={`Read Folio ${article.chapterNumber}: ${article.title}`}
               className="hover:underline focus:outline-none"
             >
               {article.title}

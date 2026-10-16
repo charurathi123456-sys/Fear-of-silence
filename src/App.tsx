@@ -86,7 +86,7 @@ export default function App() {
   };
 
   // Open an article with its own unique, clean URL (e.g. /fear-of-silence)
-  const handleOpenArticle = (article: Article) => {
+  const handleOpenArticle = useCallback((article: Article) => {
     setSelectedArticle(article);
     setActiveView('reader');
     const cleanPath = `/${article.slug}`;
@@ -107,10 +107,10 @@ export default function App() {
     });
 
     window.scrollTo({ top: 0, behavior: 'smooth' });
-  };
+  }, []);
 
   // Back to Homepage with unique /home URL
-  const handleBackToCatalog = () => {
+  const handleBackToCatalog = useCallback(() => {
     setActiveView('catalog');
     pushCleanUrl(ROUTE_PATHS.HOME);
 
@@ -123,10 +123,10 @@ export default function App() {
     });
 
     window.scrollTo({ top: 0, behavior: 'smooth' });
-  };
+  }, []);
 
   // Navigate to any of the unique pages
-  const handleNavigate = (view: ViewType, filterCategory?: string) => {
+  const handleNavigate = useCallback((view: ViewType, filterCategory?: string) => {
     setActiveView(view);
     if (filterCategory) {
       setSelectedCategory(filterCategory);
@@ -154,7 +154,53 @@ export default function App() {
     });
 
     window.scrollTo({ top: 0, behavior: 'smooth' });
-  };
+  }, []);
+
+  // Global internal link handler so all internal <a> tags navigate seamlessly
+  useEffect(() => {
+    const handleGlobalClick = (e: MouseEvent) => {
+      const anchor = (e.target as HTMLElement).closest('a');
+      if (!anchor) return;
+
+      const href = anchor.getAttribute('href');
+      // Only intercept internal links starting with / that do not target external/new tab
+      if (
+        href &&
+        href.startsWith('/') &&
+        !anchor.getAttribute('target') &&
+        !e.ctrlKey &&
+        !e.metaKey &&
+        !e.shiftKey &&
+        !e.altKey
+      ) {
+        // If it's a hash jump on the same page, let browser handle it or scroll
+        if (href.startsWith('/#') || href.includes('#')) {
+          const [basePath, hashPart] = href.split('#');
+          if (basePath === window.location.pathname || basePath === '' || basePath === '/home') {
+            const targetEl = document.getElementById(hashPart);
+            if (targetEl) {
+              e.preventDefault();
+              targetEl.scrollIntoView({ behavior: 'smooth' });
+              return;
+            }
+          }
+        }
+
+        e.preventDefault();
+        const resolution = resolveRoute(href);
+        if (resolution.view === 'reader' && resolution.article) {
+          handleOpenArticle(resolution.article);
+        } else {
+          handleNavigate(resolution.view);
+        }
+      }
+    };
+
+    window.addEventListener('click', handleGlobalClick);
+    return () => {
+      window.removeEventListener('click', handleGlobalClick);
+    };
+  }, [handleOpenArticle, handleNavigate]);
 
   const savedArticles = ARTICLES.filter((a) => savedIds.includes(a.id));
 

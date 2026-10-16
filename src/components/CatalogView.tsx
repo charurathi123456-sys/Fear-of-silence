@@ -232,34 +232,94 @@ export const CatalogView: React.FC<CatalogViewProps> = ({
             Editorial Knowledge Base
           </span>
           <h2 className="font-editorial text-2xl sm:text-3xl text-center text-[#1C1917] mb-8">
-            Frequently Asked Questions on Silence and Anxiety
+            Frequently Asked Questions on Silence, Sedatephobia, and Noise
           </h2>
 
           <div className="space-y-6">
             <div className="p-4 sm:p-5 bg-[#FCFAF6] border border-[#DDD5C5] rounded-xl">
-              <h3 className="font-editorial text-lg text-[#1C1917] mb-2 font-medium">
-                Why does silence make me feel anxious in an empty house?
-              </h3>
+              <h2 className="font-editorial text-lg sm:text-xl text-[#1C1917] mb-2 font-medium">
+                Why Does Complete Silence Make You Feel Anxious in an Empty Room?
+              </h2>
               <p className="font-reading text-sm text-[#443F37] leading-relaxed">
-                <strong className="text-[#936B45]">Answer:</strong> Silence strips away the sensory veil of daily noise, causing your brain's Default Mode Network to process latent worries and unresolved thoughts. In nature, sudden stillness also signaled predator threats, keeping our nervous system on alert.
+                <strong className="text-[#936B45]">Answer:</strong> Silence removes ambient sensory masking, causing your brain's Default Mode Network to amplify latent bodily worries and subconscious rumination. In evolutionary biology, sudden stillness signaled predator threats, sparking autonomic vigilance. Learn more in{' '}
+                <a
+                  href="/fear-of-silence"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    const f1 = articles.find((a) => a.id === 'sedatephobia-clinical-panic');
+                    if (f1) onOpenArticle(f1);
+                  }}
+                  title="Read Folio 01: Fear of Silence Explained"
+                  className="font-medium text-[#7A5C3E] underline decoration-[#C4B7A2] hover:decoration-[#7A5C3E]"
+                >
+                  Folio 01: Fear of Silence Explained
+                </a>{' '}
+                or explore our{' '}
+                <a
+                  href="/clinical-science"
+                  title="Explore Clinical Science and Brain Research"
+                  className="font-medium text-[#7A5C3E] underline decoration-[#C4B7A2] hover:decoration-[#7A5C3E]"
+                >
+                  Clinical Science Atlas
+                </a>.
               </p>
             </div>
 
             <div className="p-4 sm:p-5 bg-[#FCFAF6] border border-[#DDD5C5] rounded-xl">
-              <h3 className="font-editorial text-lg text-[#1C1917] mb-2 font-medium">
-                Why can I not fall asleep without a fan or background noise?
-              </h3>
+              <h2 className="font-editorial text-lg sm:text-xl text-[#1C1917] mb-2 font-medium">
+                Why Can You Not Fall Asleep Without White Noise or the TV On?
+              </h2>
               <p className="font-reading text-sm text-[#443F37] leading-relaxed">
-                <strong className="text-[#936B45]">Answer:</strong> Background noise creates a raised acoustic threshold that masks sudden sound spikes (floor creaks, outdoor vehicles) and provides gentle cognitive engagement, preventing bedtime overthinking.
+                <strong className="text-[#936B45]">Answer:</strong> Continuous sound elevates the bedroom's acoustic floor, smoothing volume spikes that cause micro-arousals and providing a gentle cognitive distraction against racing bedtime thoughts. Discover the science in{' '}
+                <a
+                  href="/white-noise-addiction"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    const f2 = articles.find((a) => a.id === 'white-noise-addiction');
+                    if (f2) onOpenArticle(f2);
+                  }}
+                  title="Read Folio 02: Background Noise for Sleep"
+                  className="font-medium text-[#7A5C3E] underline decoration-[#C4B7A2] hover:decoration-[#7A5C3E]"
+                >
+                  Folio 02: Background Noise for Sleep
+                </a>{' '}
+                and examine our{' '}
+                <a
+                  href="/acoustic-culture"
+                  title="Explore Acoustic Culture of Modern Life"
+                  className="font-medium text-[#7A5C3E] underline decoration-[#C4B7A2] hover:decoration-[#7A5C3E]"
+                >
+                  Acoustic Culture Analysis
+                </a>.
               </p>
             </div>
 
             <div className="p-4 sm:p-5 bg-[#FCFAF6] border border-[#DDD5C5] rounded-xl">
-              <h3 className="font-editorial text-lg text-[#1C1917] mb-2 font-medium">
-                How can I stop being afraid of silence and learn to relax?
-              </h3>
+              <h2 className="font-editorial text-lg sm:text-xl text-[#1C1917] mb-2 font-medium">
+                How Do You Stop Being Afraid of Silence and Retrain Your Nervous System?
+              </h2>
               <p className="font-reading text-sm text-[#443F37] leading-relaxed">
-                <strong className="text-[#936B45]">Answer:</strong> Practice graduated micro-exposure: take 60-second unbuffered breaks during everyday tasks (making tea, waiting for an elevator) without devices, grounding your attention in physical sensations.
+                <strong className="text-[#936B45]">Answer:</strong> Retraining uses graduated micro-exposure: commit to 60-second audio-free intervals during low-stakes tasks (making tea, waiting for an elevator) while focusing on tactile grounding to signal physical safety to the amygdala. Follow our step-by-step roadmap in{' '}
+                <a
+                  href="/how-to-enjoy-silence"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    const f10 = articles.find((a) => a.id === 'befriending-the-void');
+                    if (f10) onOpenArticle(f10);
+                  }}
+                  title="Read Folio 10: Retraining for Quiet"
+                  className="font-medium text-[#7A5C3E] underline decoration-[#C4B7A2] hover:decoration-[#7A5C3E]"
+                >
+                  Folio 10: Retraining for Quiet
+                </a>{' '}
+                or browse the full{' '}
+                <a
+                  href="/search-keywords"
+                  title="Browse Sedatephobia Search Matrix & FAQ Index"
+                  className="font-medium text-[#7A5C3E] underline decoration-[#C4B7A2] hover:decoration-[#7A5C3E]"
+                >
+                  Search Matrix & FAQ Index
+                </a>.
               </p>
             </div>
           </div>

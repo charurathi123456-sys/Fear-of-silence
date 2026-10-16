@@ -11,7 +11,8 @@ import {
   Share2,
   Check,
   Headphones,
-  Compass
+  Compass,
+  BookOpen
 } from 'lucide-react';
 import { Article } from '../types/article';
 import { ambientAudio } from '../utils/audioSynth';
@@ -86,6 +87,44 @@ export const ReaderView: React.FC<ReaderViewProps> = ({
   const currentIndex = allArticles.findIndex((a) => a.id === article.id);
   const prevArticle = currentIndex > 0 ? allArticles[currentIndex - 1] : null;
   const nextArticle = currentIndex < allArticles.length - 1 ? allArticles[currentIndex + 1] : null;
+
+  const relatedArticles = (article.relatedArticleIds || [])
+    .map((id) => allArticles.find((a) => a.id === id || a.slug === id))
+    .filter((a): a is Article => a !== undefined);
+
+  const renderParagraphWithLinks = (text: string) => {
+    const regex = /\[([^\]]+)\]\(([^)]+)\)/g;
+    if (!regex.test(text)) {
+      return text;
+    }
+    regex.lastIndex = 0;
+    const parts: React.ReactNode[] = [];
+    let lastIdx = 0;
+    let match: RegExpExecArray | null;
+
+    while ((match = regex.exec(text)) !== null) {
+      if (match.index > lastIdx) {
+        parts.push(text.slice(lastIdx, match.index));
+      }
+      const anchorText = match[1];
+      const linkUrl = match[2];
+      parts.push(
+        <a
+          key={match.index}
+          href={linkUrl}
+          title={anchorText}
+          className="font-medium text-[#7A5C3E] underline decoration-[#C4B7A2] hover:decoration-[#7A5C3E] hover:text-[#1C1917] transition-colors"
+        >
+          {anchorText}
+        </a>
+      );
+      lastIdx = regex.lastIndex;
+    }
+    if (lastIdx < text.length) {
+      parts.push(text.slice(lastIdx));
+    }
+    return parts;
+  };
 
   const fontClasses = {
     normal: 'text-base sm:text-lg leading-relaxed sm:leading-loose',
@@ -260,11 +299,33 @@ export const ReaderView: React.FC<ReaderViewProps> = ({
             </div>
 
             <div className="flex flex-wrap items-center gap-2 text-xs uppercase tracking-widest text-[#8C8275] mb-4 font-mono">
-              <span>FOLIO {article.chapterNumber}</span>
-              <span aria-hidden="true" className="text-[#BFAF98]">·</span>
-              <span>{article.chapterCategory}</span>
-              <span aria-hidden="true" className="text-[#BFAF98]">·</span>
-              <span>{article.publishedDate}</span>
+              <a
+                href={ROUTE_PATHS.HOME}
+                onClick={(e) => {
+                  e.preventDefault();
+                  onBackToCatalog();
+                }}
+                title="Return to Quietude Editorial Archive"
+                className="hover:text-[#1C1917] hover:underline"
+              >
+                Quietude Archive
+              </a>
+              <span aria-hidden="true" className="text-[#BFAF98]">/</span>
+              <a
+                href={
+                  article.chapterCategory.includes('Clinical') ||
+                  article.chapterCategory.includes('Brain') ||
+                  article.chapterCategory.includes('Health')
+                    ? ROUTE_PATHS.CLINICAL_SCIENCE
+                    : ROUTE_PATHS.ACOUSTIC_CULTURE
+                }
+                title={`Explore ${article.chapterCategory} Monograph Collection`}
+                className="hover:text-[#1C1917] hover:underline"
+              >
+                {article.chapterCategory}
+              </a>
+              <span aria-hidden="true" className="text-[#BFAF98]">/</span>
+              <span className="text-[#1C1917] font-semibold">Folio {article.chapterNumber}</span>
               <span aria-hidden="true" className="text-[#BFAF98]">·</span>
               <span>{article.readTime}</span>
             </div>
@@ -338,10 +399,12 @@ export const ReaderView: React.FC<ReaderViewProps> = ({
                             <span className="font-mono text-xs uppercase tracking-wider text-[#7A5C3E] font-semibold block mb-1">
                               Direct Answer
                             </span>
-                            <span className="font-medium text-[#1C1917]">{p.replace('Answer: ', '')}</span>
+                            <span className="font-medium text-[#1C1917]">
+                              {renderParagraphWithLinks(p.replace('Answer: ', ''))}
+                            </span>
                           </>
                         ) : (
-                          p
+                          renderParagraphWithLinks(p)
                         )}
                       </p>
                     );
@@ -420,15 +483,86 @@ export const ReaderView: React.FC<ReaderViewProps> = ({
             </button>
           </div>
 
+          {/* Internal Folio Cross-References & Curated Reading with Anchor Texts */}
+          <section className="mt-12 pt-8 border-t border-[#EAE3D6] bg-[#FAF8F5] p-5 sm:p-6 rounded-xl border border-[#E7E0D3]">
+            <h5 className="font-mono text-xs uppercase tracking-wider text-[#7A5C3E] mb-2 flex items-center gap-2 font-semibold">
+              <BookOpen className="w-3.5 h-3.5 text-[#936B45]" />
+              <span>Internal Folio Cross-References & Related Studies</span>
+            </h5>
+            <p className="text-xs text-[#5C5346] mb-3 font-reading leading-relaxed">
+              Continue reading connected chapters, neurobiology atlases, and clinical tools within the Quietude archives:
+            </p>
+            <ul className="space-y-2.5 text-xs text-[#524B40]">
+              {relatedArticles.map((rel, idx) => (
+                <li key={rel.id} className="flex items-start gap-2">
+                  <span className="text-[#936B45] font-mono font-medium">0{idx + 1}.</span>
+                  <div>
+                    <a
+                      href={`/${rel.slug}`}
+                      onClick={(e) => {
+                        e.preventDefault();
+                        onSelectArticle(rel);
+                      }}
+                      title={`Read Folio ${rel.chapterNumber}: ${rel.title}`}
+                      className="font-medium text-[#1C1917] hover:text-[#7A5C3E] underline decoration-[#C4B7A2] hover:decoration-[#7A5C3E]"
+                    >
+                      Read Folio {rel.chapterNumber}: {rel.title}
+                    </a>
+                    <span className="text-[#7A7062]"> — {rel.subtitle}</span>
+                  </div>
+                </li>
+              ))}
+              <li className="flex items-start gap-2 pt-2 border-t border-[#EAE3D6]">
+                <span className="text-[#936B45] font-mono font-medium">0{relatedArticles.length + 1}.</span>
+                <div>
+                  <a
+                    href={ROUTE_PATHS.CLINICAL_SCIENCE}
+                    title="Explore Clinical Science and Brain Research on Silence"
+                    className="font-medium text-[#1C1917] hover:text-[#7A5C3E] underline decoration-[#C4B7A2] hover:decoration-[#7A5C3E]"
+                  >
+                    Clinical Science & Neuroscience Atlas
+                  </a>
+                  <span className="text-[#7A7062]"> — Physiological guide to sedatephobia, central auditory gain, and brain network alarms.</span>
+                </div>
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="text-[#936B45] font-mono font-medium">0{relatedArticles.length + 2}.</span>
+                <div>
+                  <a
+                    href={ROUTE_PATHS.ACOUSTIC_CULTURE}
+                    title="Explore Modern Acoustic Culture and Background Noise Habits"
+                    className="font-medium text-[#1C1917] hover:text-[#7A5C3E] underline decoration-[#C4B7A2] hover:decoration-[#7A5C3E]"
+                  >
+                    Acoustic Culture of Modern Life
+                  </a>
+                  <span className="text-[#7A7062]"> — Societal critique of 24/7 noise habits, podcasts, and digital silence shields.</span>
+                </div>
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="text-[#936B45] font-mono font-medium">0{relatedArticles.length + 3}.</span>
+                <div>
+                  <a
+                    href={ROUTE_PATHS.SEARCH_KEYWORDS}
+                    title="Browse the Search Matrix and FAQ Directory"
+                    className="font-medium text-[#1C1917] hover:text-[#7A5C3E] underline decoration-[#C4B7A2] hover:decoration-[#7A5C3E]"
+                  >
+                    Sedatephobia Search Matrix & FAQ Index
+                  </a>
+                  <span className="text-[#7A7062]"> — High-intent search queries with direct, concise clinical answers.</span>
+                </div>
+              </li>
+            </ul>
+          </section>
+
           {/* Verified External Citations & Scientific Reference Links */}
-          <section className="mt-12 pt-8 border-t border-[#EAE3D6] bg-[#FAF8F5] p-5 sm:p-6 rounded-xl border">
-            <h5 className="font-mono text-xs uppercase tracking-wider text-[#7A5C3E] mb-3 flex items-center gap-2">
+          <section className="mt-6 pt-6 border-t border-[#EAE3D6] bg-[#FAF8F5] p-5 sm:p-6 rounded-xl border border-[#E7E0D3]">
+            <h5 className="font-mono text-xs uppercase tracking-wider text-[#7A5C3E] mb-3 flex items-center gap-2 font-semibold">
               <Compass className="w-3.5 h-3.5 text-[#936B45]" />
               <span>External Citations & Primary Literature</span>
             </h5>
             <ul className="space-y-2.5 text-xs text-[#524B40]">
               <li className="flex items-start gap-2">
-                <span className="text-[#936B45] font-mono">01.</span>
+                <span className="text-[#936B45] font-mono font-medium">01.</span>
                 <div>
                   <a
                     href="https://orfieldlabs.com"
@@ -443,7 +577,7 @@ export const ReaderView: React.FC<ReaderViewProps> = ({
                 </div>
               </li>
               <li className="flex items-start gap-2">
-                <span className="text-[#936B45] font-mono">02.</span>
+                <span className="text-[#936B45] font-mono font-medium">02.</span>
                 <div>
                   <a
                     href="https://www.apa.org/topics/anxiety"
@@ -458,7 +592,7 @@ export const ReaderView: React.FC<ReaderViewProps> = ({
                 </div>
               </li>
               <li className="flex items-start gap-2">
-                <span className="text-[#936B45] font-mono">03.</span>
+                <span className="text-[#936B45] font-mono font-medium">03.</span>
                 <div>
                   <a
                     href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4923834/"

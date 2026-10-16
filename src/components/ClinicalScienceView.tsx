@@ -155,9 +155,103 @@ export const ClinicalScienceView: React.FC<ClinicalScienceViewProps> = ({
         </div>
       </section>
 
-      {/* Embedded Live Oscilloscope */}
-      <section className="mb-14">
-        <SoundSpectrumVisualizer />
+      {/* Internal Knowledge Matrix & Connected Research */}
+      <section className="mb-14 p-6 sm:p-8 bg-[#FAF8F5] border border-[#DDD5C5] rounded-2xl book-shadow">
+        <h2 className="font-editorial text-2xl text-[#1C1917] mb-2 font-medium">
+          Where Can You Explore Connected Clinical Studies and Acoustic Culture?
+        </h2>
+        <p className="font-reading text-sm text-[#5C5346] mb-5 leading-relaxed">
+          <strong className="text-[#936B45]">Answer:</strong> Deepen your understanding of sensory processing and quiet intolerance across these related monographs and directories:
+        </p>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 text-xs font-sans">
+          <a
+            href="/fear-of-silence"
+            onClick={(e) => {
+              e.preventDefault();
+              const a = articles.find((art) => art.id === 'sedatephobia-clinical-panic');
+              if (a) onOpenArticle(a);
+            }}
+            title="Read Folio 01: Fear of Silence Explained"
+            className="p-3.5 bg-[#FCFAF6] border border-[#E7E0D3] hover:border-[#936B45] rounded-xl hover:bg-[#FAF6EE] transition-colors group block"
+          >
+            <span className="font-mono text-[10px] text-[#936B45] uppercase block mb-1">Folio 01</span>
+            <span className="font-medium text-[#1C1917] group-hover:text-[#936B45] block font-editorial text-sm">
+              Fear of Silence: Autonomic Alarm
+            </span>
+            <span className="text-[#7A7062] text-[11px] mt-1 block">Learn why quiet rooms trigger panic.</span>
+          </a>
+
+          <a
+            href="/tinnitus-in-silence"
+            onClick={(e) => {
+              e.preventDefault();
+              const a = articles.find((art) => art.id === 'tinnitus-fear-of-silence');
+              if (a) onOpenArticle(a);
+            }}
+            title="Read Folio 05: Tinnitus and Auditory Gain"
+            className="p-3.5 bg-[#FCFAF6] border border-[#E7E0D3] hover:border-[#936B45] rounded-xl hover:bg-[#FAF6EE] transition-colors group block"
+          >
+            <span className="font-mono text-[10px] text-[#936B45] uppercase block mb-1">Folio 05</span>
+            <span className="font-medium text-[#1C1917] group-hover:text-[#936B45] block font-editorial text-sm">
+              Tinnitus & Central Auditory Gain
+            </span>
+            <span className="text-[#7A7062] text-[11px] mt-1 block">Understand neural volume amplification.</span>
+          </a>
+
+          <a
+            href="/quietest-room-on-earth"
+            onClick={(e) => {
+              e.preventDefault();
+              const a = articles.find((art) => art.id === 'anechoic-chamber-madness');
+              if (a) onOpenArticle(a);
+            }}
+            title="Read Folio 04: The Anechoic Chamber Threshold"
+            className="p-3.5 bg-[#FCFAF6] border border-[#E7E0D3] hover:border-[#936B45] rounded-xl hover:bg-[#FAF6EE] transition-colors group block"
+          >
+            <span className="font-mono text-[10px] text-[#936B45] uppercase block mb-1">Folio 04</span>
+            <span className="font-medium text-[#1C1917] group-hover:text-[#936B45] block font-editorial text-sm">
+              Anechoic Chambers: -9.4 dBA Hallucinations
+            </span>
+            <span className="text-[#7A7062] text-[11px] mt-1 block">Sensory deprivation at Orfield Labs.</span>
+          </a>
+
+          <a
+            href="/acoustic-culture"
+            title="Explore Acoustic Culture of Modern Life"
+            className="p-3.5 bg-[#FCFAF6] border border-[#E7E0D3] hover:border-[#936B45] rounded-xl hover:bg-[#FAF6EE] transition-colors group block"
+          >
+            <span className="font-mono text-[10px] text-[#936B45] uppercase block mb-1">Pillar Page</span>
+            <span className="font-medium text-[#1C1917] group-hover:text-[#936B45] block font-editorial text-sm">
+              Acoustic Culture of Modern Life
+            </span>
+            <span className="text-[#7A7062] text-[11px] mt-1 block">Why modern society avoids silence.</span>
+          </a>
+
+          <a
+            href="/home"
+            title="Return to Quietude Editorial Monograph Library"
+            className="p-3.5 bg-[#FCFAF6] border border-[#E7E0D3] hover:border-[#936B45] rounded-xl hover:bg-[#FAF6EE] transition-colors group block"
+          >
+            <span className="font-mono text-[10px] text-[#936B45] uppercase block mb-1">Archive</span>
+            <span className="font-medium text-[#1C1917] group-hover:text-[#936B45] block font-editorial text-sm">
+              Quietude Monograph Library
+            </span>
+            <span className="text-[#7A7062] text-[11px] mt-1 block">Browse all 10 illustrated folios.</span>
+          </a>
+
+          <a
+            href="/search-keywords"
+            title="Explore Sedatephobia Search Matrix & FAQ Index"
+            className="p-3.5 bg-[#FCFAF6] border border-[#E7E0D3] hover:border-[#936B45] rounded-xl hover:bg-[#FAF6EE] transition-colors group block"
+          >
+            <span className="font-mono text-[10px] text-[#936B45] uppercase block mb-1">Discovery</span>
+            <span className="font-medium text-[#1C1917] group-hover:text-[#936B45] block font-editorial text-sm">
+              Search Matrix & Clinical Terminology
+            </span>
+            <span className="text-[#7A7062] text-[11px] mt-1 block">Most searched silence queries.</span>
+          </a>
+        </div>
       </section>
 
       {/* Stillness Chamber Invitation */}

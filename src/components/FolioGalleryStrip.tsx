@@ -14,17 +14,20 @@ export const FolioGalleryStrip: React.FC<FolioGalleryStripProps> = ({
 }) => {
   return (
     <section className="mb-20">
-      <div className="flex items-center justify-between mb-6">
+      <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-6">
         <div>
           <div className="flex items-center gap-2 text-xs font-mono tracking-widest uppercase text-[#8C8275] mb-1">
             <Sparkles className="w-3.5 h-3.5 text-[#936B45]" />
             <span>Visual Monograph Archive</span>
           </div>
-          <h3 className="font-editorial text-2xl sm:text-3xl text-[#1C1917]">
-            Exhibition Photo Essay Plates
-          </h3>
+          <h2 className="font-editorial text-2xl sm:text-3xl text-[#1C1917]">
+            What Do Exhibition Plates Reveal About Introspection in Silence?
+          </h2>
+          <p className="font-reading text-xs text-[#5C5346] mt-1.5 max-w-xl leading-relaxed">
+            <strong className="text-[#936B45]">Answer:</strong> These documentary photo plates capture human behavioral responses to stillness—from cozy bedtime audio blankets to sensory deprivation chambers and device-free morning pauses.
+          </p>
         </div>
-        <span className="hidden sm:inline-block font-mono text-xs text-[#8C8275]">
+        <span className="shrink-0 font-mono text-xs text-[#8C8275]">
           10 Curated Chapters
         </span>
       </div>

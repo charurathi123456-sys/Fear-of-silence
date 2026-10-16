@@ -46,7 +46,7 @@ export const ARTICLES: Article[] = [
           'Answer: A sudden surge of anxiety in an empty room happens because dead silence abruptly removes auditory distractions, forcing your nervous system to focus inward on latent bodily tension and racing subconscious thoughts.',
           'Picture this: you arrive home after a long day of traffic, meetings, and phone calls. You step inside, kick off your shoes, and shut the front door. For three seconds, it feels great. But then, as the house settles into complete stillness, a strange knot forms in your stomach.',
           'Your mind instantly starts racing: "What should I be doing right now? Did I forget something? Why does it feel so weird in here?" Before you even realize it, you reach for the remote and turn on the TV just to have voices floating around in the background.',
-          'If this sounds familiar, you are in good company. An estimated 1 in 3 adults dislikes sitting in silence, and many feel genuine panic when all sound stops. The clinical name for an intense fear of silence is sedatephobia.'
+          'If this sounds familiar, you are in good company. An estimated 1 in 3 adults dislikes sitting in silence, and many feel genuine panic when all sound stops. The clinical name for an intense fear of silence is sedatephobia. Explore our clinical analysis in our [Clinical Science & Neuroscience Atlas](/clinical-science) to understand how the brain responds to quiet.'
         ],
         quote: 'Silence does not create anxiety; it simply removes the noise that was distracting you from it.',
         sideNote: 'Fun fact: When rooms are quieter than 20 decibels, most people can hear the soft whoosh of blood rushing through their own neck arteries.'
@@ -58,7 +58,7 @@ export const ARTICLES: Article[] = [
           'Answer: The human brain associates dead quiet with danger because across ancient wild habitats, a suddenly silent forest was a universal sign that an apex predator was stalking nearby and every animal had frozen.',
           'To understand why quiet can feel so scary, think about how our ancient ancestors lived out in nature. In a healthy forest, birds are constantly chirping, crickets are humming, and leaves are rustling in the wind.',
           'There is only one time the entire forest suddenly goes dead quiet: when a tiger or bear is sneaking through the grass. Every creature freezes. So for hundreds of thousands of years, sudden silence meant: freeze, hide, or get ready to run.',
-          'When you shut off all the sounds in your modern home, your ancient nervous system gets confused. It whispers: "Why is nobody making noise? Is something bad about to happen?"'
+          'When you shut off all the sounds in your modern home, your ancient nervous system gets confused. It whispers: "Why is nobody making noise? Is something bad about to happen?" Learn how this primal reflex fuels reliance on bedtime sounds in [Folio 02: Background Noise for Sleep](/white-noise-addiction).'
         ]
       },
       {
@@ -68,12 +68,12 @@ export const ARTICLES: Article[] = [
           'Answer: You can systematically desensitize your nervous system through micro-dosing—committing to deliberate 60-second audio-free intervals during low-stakes daily activities like making tea or waiting for toast.',
           'The good news is that you don’t have to force yourself to sit in a dark cave for hours to feel better. The best trick is called "micro-dosing" quietness.',
           'Next time you are making coffee or tea, leave your phone on the counter and resist the urge to turn on a podcast. Just watch the water boil for 60 seconds. Notice that you are safe, your feet are on the floor, and nothing bad is happening.',
-          'Day by day, your nervous system learns that silence is not a threat—it is just a quiet place where you can finally catch your breath.'
+          'Day by day, your nervous system learns that silence is not a threat—it is just a quiet place where you can finally catch your breath. For a guided 4-step protocol, explore [Folio 10: Retraining for Quiet](/how-to-enjoy-silence) or take our [Interactive Silence Vulnerability Quiz](/home#silence-quiz).'
         ]
       }
     ],
     reflectionQuestion: 'What is the very first thing you usually turn on when you enter an empty room: music, television, or a podcast?',
-    relatedArticleIds: ['white-noise-addiction', 'racing-mind-at-night', 'how-to-enjoy-silence']
+    relatedArticleIds: ['white-noise-addiction', 'default-mode-network', 'befriending-the-void']
   },
   {
     id: 'white-noise-addiction',
@@ -119,7 +119,7 @@ export const ARTICLES: Article[] = [
         paragraphs: [
           'Answer: Millions of people depend on background audio for sleep because steady sound masks intrusive nighttime rumination and creates an emotional sense of companionship in an otherwise empty bedroom.',
           'If someone walked into your bedroom at 11:30 PM, they might see an impressive audio setup. You might have a box fan blasting against the wall, an app playing thunderstorm sounds, or an iPad quietly streaming a show you’ve watched twelve times before.',
-          'Most people don’t keep the show on because they care about the plot. They keep it on because as soon as it goes quiet, their brain turns into an internet browser with 50 tabs open: "Did I reply to that email? What did my boss mean by that message? Remember that embarrassing thing I said in eighth grade?"',
+          'Most people don’t keep the show on because they care about the plot. They keep it on because as soon as it goes quiet, their brain turns into an internet browser with 50 tabs open: "Did I reply to that email? What did my boss mean by that message? Remember that embarrassing thing I said in eighth grade?" Learn how brain networks trigger bedtime rumination in [Folio 09: Overthinking in Silence](/overthinking-in-the-quiet).',
           'Steady sound gives your busy brain something gentle to hold onto, keeping those worries at bay so you can drift off.'
         ],
         quote: 'We don’t run noise machines because we love noise. We run them so we don’t have to hear our own racing thoughts.',
@@ -131,7 +131,7 @@ export const ARTICLES: Article[] = [
         paragraphs: [
           'Answer: Sound masking elevates the acoustic floor of the bedroom so that intermittent environmental spikes—like floorboard creaks or pipe clinks—no longer exceed the sensory difference threshold required to alert your brain.',
           'When your room is completely quiet, any tiny sound creates a massive jump in volume relative to the baseline. That sudden acoustic contrast triggers an autonomic micro-arousal that wakes up your brain.',
-          'When you play steady white, pink, or brown noise, you create a smooth, elevated floor of sound. Now, that same pipe clink gets swallowed up by the rain or the fan. Your brain stays fast asleep because it never detects a sudden change.'
+          'When you play steady white, pink, or brown noise, you create a smooth, elevated floor of sound. Now, that same pipe clink gets swallowed up by the rain or the fan. For individuals troubled by ear ringing during quiet, review [Folio 05: Tinnitus in Silence](/tinnitus-in-silence) to see how auditory gain operates.'
         ]
       },
       {
@@ -140,12 +140,12 @@ export const ARTICLES: Article[] = [
         paragraphs: [
           'Answer: Relying on sleep sound is medically safe and restorative for nighttime rest, but it becomes problematic if it bleeds into daytime hours and prevents you from tolerating normal quiet.',
           'Here is the honest truth: needing background noise to sleep is not a medical crisis. If a gentle fan or rainfall app helps you get eight hours of deep sleep, it is doing its job!',
-          'The only time it becomes tricky is when you can’t tolerate quiet during the day—like driving in your car without music or making breakfast without a podcast. Try picking one small activity each day to do in peaceful silence. You might be surprised at how relaxing it can be.'
+          'The only time it becomes tricky is when you can’t tolerate quiet during the day—like driving in your car without music or making breakfast without a podcast. Discover more on societal audio reliance in our [Acoustic Culture Analysis](/acoustic-culture) and review our foundational overview in [Folio 01: Fear of Silence](/fear-of-silence).'
         ]
       }
     ],
     reflectionQuestion: 'What is your go-to sound to fall asleep: rain, a fan, a podcast, or a favorite TV show?',
-    relatedArticleIds: ['sedatephobia-clinical-panic', 'racing-mind-at-night', 'phone-scrolling-habit']
+    relatedArticleIds: ['sedatephobia-clinical-panic', 'default-mode-network', 'digital-pacifiers-infinite-scroll']
   },
   {
     id: 'awkward-silence-anxiety',
@@ -192,7 +192,7 @@ export const ARTICLES: Article[] = [
           'Answer: A four-second pause triggers panic because conversational rhythm serves as constant emotional reassurance of acceptance; when that rhythm stops, our primal fear of social rejection is triggered.',
           'In everyday conversation, turn-taking is lightning fast. When one person finishes a sentence, the other usually starts speaking in just two-tenths of a second! It is an invisible dance we do all day without thinking.',
           'Researchers in the Netherlands ran an experiment where they introduced a deliberate 4-second pause into casual conversations. The results were wild: participants immediately felt a spike in anxiety, reported lower self-confidence, and worried they were being quietly judged.',
-          'Four seconds is barely enough time to take a sip of water, yet socially, it can feel like standing on a brightly lit stage with your microphone turned off.'
+          'Four seconds is barely enough time to take a sip of water, yet socially, it can feel like standing on a brightly lit stage with your microphone turned off. Discover how quietness manifests between romantic partners in [Folio 07: Silence in Relationships](/silence-in-relationships).'
         ],
         quote: 'A pause between close friends is comfortable warmth. A pause with someone new feels like a pop quiz.',
         sideNote: 'In Scandinavian and Japanese conversations, silent pauses of 5 to 8 seconds are considered polite signs that you are actually pondering what the speaker said.'
@@ -203,7 +203,7 @@ export const ARTICLES: Article[] = [
         paragraphs: [
           'Answer: Uncomfortable silence activates the anterior cingulate cortex—the same neural circuitry that processes physical pain—signaling an ancestral dread of being ostracized by the tribe.',
           'Back when humans lived in small tribal groups, being liked by your group was a matter of survival. If the group rejected you, you were cast out into the wilderness alone.',
-          'Friendly chatter acts like verbal grooming. It signals: "We are good. You belong here. Nobody is upset." When the talk stops abruptly, your brain wonders: "Did I say something offensive? Are they about to kick me out?"'
+          'Friendly chatter acts like verbal grooming. It signals: "We are good. You belong here. Nobody is upset." When the talk stops abruptly, your brain wonders: "Did I say something offensive? Are they about to kick me out?" When conversational gaps occur, modern humans often reflexively pull out screens to avoid quietness, as examined in [Folio 08: Digital Pacifiers and Screen Silence](/screen-noise-addiction).'
         ]
       },
       {
@@ -212,12 +212,12 @@ export const ARTICLES: Article[] = [
         paragraphs: [
           'Answer: You can master conversational pauses by taking a steady breath, maintaining a warm, relaxed facial expression, and interpreting quiet as mutual reflection rather than social failure.',
           'The most charming people you know are rarely the fastest talkers. Instead of nervously blurting out random comments, they do something simple: they stay relaxed.',
-          'Next time a lull happens, take a slow breath, keep a warm smile on your face, and take a sip of your drink. If you don’t look panicked, the pause won’t feel awkward at all. In fact, you’ll look thoughtful, calm, and grounded.'
+          'Next time a lull happens, take a slow breath, keep a warm smile on your face, and take a sip of your drink. If you don’t look panicked, the pause won’t feel awkward at all. In fact, you’ll look thoughtful, calm, and grounded. For general techniques to calm quiet panic, read [Folio 01: Fear of Silence Explained](/fear-of-silence) and follow [Folio 10: Retraining for Quiet](/how-to-enjoy-silence).'
         ]
       }
     ],
     reflectionQuestion: 'When an awkward pause happens with a friend, do you rush to fill it with jokes, or can you sit comfortably in the quiet?',
-    relatedArticleIds: ['sedatephobia-clinical-panic', 'silence-in-relationships', 'phone-scrolling-habit']
+    relatedArticleIds: ['sedatephobia-clinical-panic', 'silence-in-relationships-stonewalling', 'digital-pacifiers-infinite-scroll']
   },
   {
     id: 'anechoic-chamber-madness',
@@ -264,7 +264,7 @@ export const ARTICLES: Article[] = [
           'Answer: Inside an anechoic chamber measuring negative 9.4 decibels, 99.99% of acoustic reflections are absorbed, leaving your auditory cortex with zero sound cues and causing disorientation within minutes.',
           'In Minneapolis sits a room known around the world: the anechoic chamber at Orfield Laboratories. Its walls are lined with thick fiberglass wedges that absorb almost every sound wave. While a quiet bedroom sits around 30 decibels, this chamber drops down into negative territory: -9.4 dBA.',
           'When visitors step inside and the heavy vault door seals behind them, the first sensation is eerie. In normal rooms, subtle sound bounces off the walls to tell your ears how big the space is. In this chamber, there is zero bounce. It feels like stepping into outer space.',
-          'Within five minutes, people report losing their balance. Without acoustic cues, you have to sit in a chair just to stay oriented.'
+          'Within five minutes, people report losing their balance. Without acoustic cues, you have to sit in a chair just to stay oriented. Review the neuroscience of sensory deprivation in our [Clinical Science & Neuroscience Atlas](/clinical-science).'
         ],
         quote: 'You do not hear silence in that chamber. You hear yourself: your pulse, your joints, your breath, and the electricity of your ears.',
         sideNote: 'The famous composer John Cage went into a similar chamber expecting total quiet. Instead, he heard a high-pitched ring (his nervous system) and a low thrum (his blood circulation).'
@@ -276,7 +276,7 @@ export const ARTICLES: Article[] = [
           'Answer: Deprived of external sound, the brain turns up its internal neuro-auditory gain, amplifying heartbeats, blood circulation, and joint friction until they sound loud and sensory illusions emerge.',
           'Once the outside world is gone, your ears do something fascinating: they turn up their internal volume dial. Suddenly, you hear sounds you never noticed before.',
           'You can hear your eyelids blink with a soft wet click. You can hear your neck vertebrae grinding as you turn your head. Your heartbeat sounds like someone tapping a drum next to your ear.',
-          'For many people, this is overwhelming. The longest anyone has stayed inside the dark room without asking to get out is roughly 45 minutes.'
+          'For many people, this is overwhelming. The longest anyone has stayed inside the dark room without asking to get out is roughly 45 minutes. This same neurological gain mechanism explains why ear ringing spikes at night in [Folio 05: Tinnitus in Silence](/tinnitus-in-silence).'
         ]
       },
       {
@@ -285,12 +285,12 @@ export const ARTICLES: Article[] = [
         paragraphs: [
           'Answer: Anechoic chamber experiments prove that absolute silence is physically impossible for living humans, and normal household quiet is simply a calm backdrop for our own biological rhythms.',
           'The real lesson of the quietest room on Earth is comforting: absolute silence does not exist for living humans! Even in the deepest quiet, you are alive, your heart is beating, and your brain is buzzing.',
-          'So when a quiet bedroom feels scary, remember that you are never truly alone in an empty void. You are simply sitting with the quiet, steady rhythm of your own body.'
+          'So when a quiet bedroom feels scary, remember that you are never truly alone in an empty void. You are simply sitting with the quiet, steady rhythm of your own body. Learn how to befriend stillness in [Folio 10: Retraining for Quiet](/how-to-enjoy-silence).'
         ]
       }
     ],
     reflectionQuestion: 'How long do you think you could sit comfortably in a completely silent, dark room before wanting to leave?',
-    relatedArticleIds: ['tinnitus-night-ringing', 'sedatephobia-clinical-panic', 'racing-mind-at-night']
+    relatedArticleIds: ['tinnitus-fear-of-silence', 'sedatephobia-clinical-panic', 'default-mode-network']
   },
   {
     id: 'tinnitus-fear-of-silence',
@@ -337,7 +337,7 @@ export const ARTICLES: Article[] = [
           'Answer: Tinnitus seems much louder in a quiet bedroom because of the contrast effect: with zero ambient sound to mask the ringing, your brain notices the internal tone as the primary auditory stimulus.',
           'Think of a small flashlight. If you turn it on at noon on a sunny beach, you won’t even see the beam. But if you turn that same flashlight on in a pitch-black cellar, it lights up the entire space and blinds your eyes.',
           'Tinnitus works the exact same way. During the day, conversations, cars, air conditioning, and keyboards mask the ring. But the moment you turn off the bedside lamp and the house falls silent, that quiet background makes the phantom sound feel enormous.',
-          'Your auditory system automatically cranks up its sensitivity to search for sound, amplifying the internal tone.'
+          'Your auditory system automatically cranks up its sensitivity to search for sound, amplifying the internal tone. Learn why this auditory gain spikes in quiet environments in our [Clinical Science & Neuroscience Atlas](/clinical-science).'
         ],
         quote: 'The ringing sound itself cannot hurt you. It is the panic and fear attached to the ringing that steals your sleep.',
         sideNote: 'Over 15% of the global population experiences some level of tinnitus, with most noticing it primarily at bedtime.'
@@ -347,7 +347,7 @@ export const ARTICLES: Article[] = [
         iconName: 'heart',
         paragraphs: [
           'Answer: Central auditory gain is an automatic neurological volume boost in the brainstem; when external sound waves drop, auditory neurons increase firing sensitivity, turning faint neural noise into loud ringing.',
-          'Here is what catches most people in a trap: you lie down, hear the ring, and immediately think: "Oh no, it’s back. I’m never going to sleep tonight. What if this gets worse?"',
+          'Here is what catches most people in a trap: you lie down, hear the ring, and immediately think: "Oh no, it’s back. I’m never going to sleep tonight. What if this gets worse?" Learn how this bedtime trigger accelerates nighttime racing thoughts in [Folio 09: Overthinking in Silence](/overthinking-in-the-quiet).',
           'That panicked thought releases a splash of adrenaline and cortisol into your bloodstream. Your heart rate ticks up, your senses sharpen, and your brain says: "Danger detected! Monitor that sound closely!" Now, you are hyper-focused on the very noise you want to ignore.'
         ]
       },
@@ -357,12 +357,12 @@ export const ARTICLES: Article[] = [
         paragraphs: [
           'Answer: You can interrupt the tinnitus anxiety loop by introducing low-volume broadband sound—such as soft rain or brown noise—just below the volume of the ring to facilitate auditory habituation without panic.',
           'The secret is not trying to force silence. Instead, give your ears a gentle friend. Use a bedside sound machine set to a soft, natural sound—like gentle surf, rustling leaves, or deep brown noise—at a volume just below the ringing.',
-          'This takes the edge off the contrast without completely hiding the sound, helping your brain realize over time that the tone is completely harmless background wallpaper.'
+          'This takes the edge off the contrast without completely hiding the sound, helping your brain realize over time that the tone is completely harmless background wallpaper. For how to transition toward natural quiet, review [Folio 02: Background Noise for Sleep](/white-noise-addiction) and [Folio 10: Retraining for Quiet](/how-to-enjoy-silence).'
         ]
       }
     ],
     reflectionQuestion: 'Have you noticed that the less you worry about your ear ringing, the faster it seems to fade into the background?',
-    relatedArticleIds: ['white-noise-addiction', 'racing-mind-at-night', 'the-quietest-room-on-earth']
+    relatedArticleIds: ['white-noise-addiction', 'default-mode-network', 'anechoic-chamber-madness']
   },
   {
     id: 'horror-vacui-empty-mind',
@@ -409,7 +409,7 @@ export const ARTICLES: Article[] = [
           'Answer: People choose physical discomfort over sitting silently because the human mind suffers from horror vacui—an aversion to mental emptiness that feels intolerable without external stimulation.',
           'In 2014, scientists at the University of Virginia conducted a famous study. They asked everyday college students to sit alone in a plain, quiet room for just 15 minutes with absolutely nothing to do—no phones, no books, no music, no pens.',
           'The only thing in the room was a button they could press to give themselves an unpleasant electric shock. Before the test, all participants said they would gladly pay money to avoid being shocked.',
-          'The result? Nearly 70% of men and 25% of women chose to shock themselves rather than sit alone with their thoughts for 15 minutes! That is how deeply uncomfortable an empty, quiet moment can feel.'
+          'The result? Nearly 70% of men and 25% of women chose to shock themselves rather than sit alone with their thoughts for 15 minutes! That is how deeply uncomfortable an empty, quiet moment can feel. Discover how smartphones became instant defense shields in [Folio 08: Digital Pacifiers and Screen Silence](/screen-noise-addiction).'
         ],
         quote: 'All of humanity’s problems stem from man’s inability to sit quietly in a room alone. — Blaise Pascal',
         sideNote: 'In traditional Japanese design, the word "ma" refers to intentional empty space—the pause that gives music its beauty.'
@@ -420,7 +420,7 @@ export const ARTICLES: Article[] = [
         paragraphs: [
           'Answer: Compulsive busyness acts as a psychological buffer, keeping unprocessed grief, difficult life decisions, and existential vulnerability submerged beneath constant task completion.',
           'Why would someone rather get shocked than sit still? Because when you stop moving, all the things you’ve been running from catch up with you.',
-          'That sadness you haven’t processed, that career decision you’ve been putting off, that argument with your sister—busyness keeps them submerged under a mountain of to-do lists. Sitting still feels like peeling off the bandage.'
+          'That sadness you haven’t processed, that career decision you’ve been putting off, that argument with your sister—busyness keeps them submerged under a mountain of to-do lists. Sitting still feels like peeling off the bandage. Explore the cultural obsession with non-stop stimulation in our [Acoustic Culture Analysis](/acoustic-culture).'
         ]
       },
       {
@@ -429,12 +429,12 @@ export const ARTICLES: Article[] = [
         paragraphs: [
           'Answer: You can build tolerance for mental stillness by taking micro-pauses—such as sitting quietly for two minutes after finishing a warm beverage before rushing to the next task.',
           'You don’t have to become a Zen monk tomorrow. Start with something tiny: next time you finish a cup of tea, don’t immediately jump up to wash the mug. Just sit for three breaths. Look at the light on the wall.',
-          'Give yourself permission to exist without producing anything for two minutes. It is the greatest gift you can give your mind.'
+          'Give yourself permission to exist without producing anything for two minutes. It is the greatest gift you can give your mind. Follow our clinical protocol in [Folio 01: Fear of Silence Explained](/fear-of-silence) and explore [Folio 10: Retraining for Quiet](/how-to-enjoy-silence).'
         ]
       }
     ],
     reflectionQuestion: 'If you had two completely free hours this afternoon with no phone or chores, what would you feel: excitement or panic?',
-    relatedArticleIds: ['phone-scrolling-habit', 'racing-mind-at-night', 'how-to-enjoy-silence']
+    relatedArticleIds: ['digital-pacifiers-infinite-scroll', 'default-mode-network', 'befriending-the-void']
   },
   {
     id: 'silence-in-relationships-stonewalling',
@@ -481,7 +481,7 @@ export const ARTICLES: Article[] = [
           'Answer: Partner silence triggers anxiety in those with anxious attachment because past experiences or unstable emotional environments condition the brain to equate quietness with impending conflict or withdrawal.',
           'If you have an anxious attachment style or grew up in a home where adults gave each other the "silent treatment," quietness doesn’t feel safe. It feels like someone holding a match near gasoline.',
           'So when your partner is simply reading an article or thinking about their day, your alarm bells ring. You ask: "Are you okay?" They reply: "Yeah, totally fine!" But your brain doesn’t believe them. You ask again ten minutes later.',
-          'Recognizing this pattern is the first step to feeling at ease. Their quietness is almost never about you—it’s just their way of recharging.'
+          'Recognizing this pattern is the first step to feeling at ease. Their quietness is almost never about you—it’s just their way of recharging. Compare this with brief conversational lulls in [Folio 03: Awkward Silence Anxiety](/awkward-silence).'
         ],
         quote: 'To sit quietly with someone you love without feeling the need to perform is true intimacy.',
         sideNote: 'Renowned relationship psychologist Dr. John Gottman notes that comfortable parallel play (reading together in silence) is a hallmark of long-lasting couples.'
@@ -492,7 +492,7 @@ export const ARTICLES: Article[] = [
         paragraphs: [
           'Answer: Comfortable companionable silence features relaxed physical posture, soft breathing, and receptive eye contact, whereas toxic stonewalling displays rigid muscles, crossed arms, and hostile avoidance.',
           'In comfortable silence, their body is soft. Their jaw is relaxed, their shoulders are dropped, and if you catch their eye, they give you a gentle smile. In stonewalling or anger, their body is stiff, their arms are crossed, and they actively avoid looking at you.',
-          'If their body is relaxed, you can let your own shoulders drop too.'
+          'If their body is relaxed, you can let your own shoulders drop too. Explore the cultural backdrop of modern noise habits in our [Acoustic Culture Archive](/acoustic-culture).'
         ]
       },
       {
@@ -501,12 +501,12 @@ export const ARTICLES: Article[] = [
         paragraphs: [
           'Answer: A partner can neutralize silence dread with a brief anchor phrase such as "I love sharing this quiet room with you," affirming that stillness represents closeness rather than emotional distance.',
           'If you are the quiet partner in a relationship, you can help your partner feel safe with a simple sentence: "I love being in this quiet room with you. I’m just reading my book!"',
-          'That small 5-second sentence dispels all doubts and turns a potentially stressful silence into a sweet shared sanctuary.'
+          'That small 5-second sentence dispels all doubts and turns a potentially stressful silence into a sweet shared sanctuary. Practice mindfulness exercises together using [Folio 10: Retraining for Quiet](/how-to-enjoy-silence).'
         ]
       }
     ],
     reflectionQuestion: 'Can you sit beside your partner or a close friend for 20 minutes without checking your phone or asking if they are okay?',
-    relatedArticleIds: ['awkward-silence-anxiety', 'horror-vacui-empty-mind', 'how-to-enjoy-silence']
+    relatedArticleIds: ['awkward-silence-anxiety', 'horror-vacui-empty-mind', 'befriending-the-void']
   },
   {
     id: 'digital-pacifiers-infinite-scroll',
@@ -553,7 +553,7 @@ export const ARTICLES: Article[] = [
           'Answer: Humans reflexively reach for phones in quiet intervals because mobile devices act as adult pacifiers, dispensing micro-doses of dopamine that mask momentary boredom and uncomfortable internal thoughts.',
           'Watch any pedestrian crossing in any city. The signal turns red. In that brief ten-second pause between steps, nearly half the crowd pulls out a glass rectangle and scrolls through two centimeters of social feeds.',
           'Nobody received an emergency text. Nobody had a life-changing epiphany. What happened was much simpler: reality paused for six seconds, and modern brains panicked.',
-          'We have conditioned ourselves to treat every quiet gap in the day as an emergency that must be patched with pixels and dopamine.'
+          'We have conditioned ourselves to treat every quiet gap in the day as an emergency that must be patched with pixels and dopamine. Learn why sitting with empty thoughts triggers distress in [Folio 06: Fear of Empty Thoughts](/fear-of-empty-thoughts).'
         ],
         quote: 'We have traded quiet communion with ourselves for infinite feeds curated by algorithms.',
         sideNote: 'The average adult touches, swipes, or taps their phone 2,617 times every single day.'
@@ -564,7 +564,7 @@ export const ARTICLES: Article[] = [
         paragraphs: [
           'Answer: Keeping earbuds constantly plugged with audio prevents the brain from engaging in vital cognitive downtime—the essential mental state required to digest emotional experiences and synthesize memories.',
           'Consider the invention of wireless earbuds. Many people now wear them from the moment they get out of bed until they fall asleep: morning news while brushing teeth, podcasts on the subway, lo-fi beats at work, YouTube while cooking dinner.',
-          'By keeping our ear canals permanently plugged with sound, we have made it virtually impossible to ever have an accidental, quiet conversation with our own thoughts.'
+          'By keeping our ear canals permanently plugged with sound, we have made it virtually impossible to ever have an accidental, quiet conversation with our own thoughts. This 24/7 noise immersion leads directly to bedtime sleep trouble, as examined in [Folio 02: Background Noise for Sleep](/white-noise-addiction).'
         ]
       },
       {
@@ -573,12 +573,12 @@ export const ARTICLES: Article[] = [
         paragraphs: [
           'Answer: An unbuffered walk—walking outdoors with no earbuds and devices stowed—re-engages your physical senses with ambient natural soundscapes, retraining the mind to experience calmness without digital stimulation.',
           'Want to try a fun experiment? Walk to your local coffee shop or mailbox with zero headphones and keep your phone in your pocket.',
-          'At first, your fingers will itch to pull it out. But after two blocks, the real world rushes back in: the smell of rain on asphalt, birds chirping in a tree, two dogs greeting each other. Your thoughts get room to breathe, and you arrive home feeling refreshed instead of drained.'
+          'At first, your fingers will itch to pull it out. But after two blocks, the real world rushes back in: the smell of rain on asphalt, birds chirping in a tree, two dogs greeting each other. Your thoughts get room to breathe, and you arrive home feeling refreshed instead of drained. For clinical grounding tools, consult our [Clinical Science & Neuroscience Atlas](/clinical-science) and try [Folio 10: Retraining for Quiet](/how-to-enjoy-silence).'
         ]
       }
     ],
     reflectionQuestion: 'Next time you wait in line for coffee, can you keep your phone in your pocket and simply observe the room?',
-    relatedArticleIds: ['white-noise-addiction', 'horror-vacui-empty-mind', 'how-to-enjoy-silence']
+    relatedArticleIds: ['white-noise-addiction', 'horror-vacui-empty-mind', 'befriending-the-void']
   },
   {
     id: 'default-mode-network',
@@ -625,7 +625,7 @@ export const ARTICLES: Article[] = [
           'Answer: The Default Mode Network (DMN) activates when task-focused sensory demands stop, prompting the resting brain to organize autobiographical memories, future scenarios, and emotional reflections.',
           'In the 1990s, brain researchers were studying fMRI scans to see what happened when people solved math problems. Naturally, specific parts of the brain lit up. But when the researchers told participants to just lay still and rest between tests, something wild happened.',
           'A massive, interconnected network of brain regions flared with energy! The resting brain was using almost as much glucose and oxygen as a brain playing chess.',
-          'They named this the Default Mode Network (DMN). It is the part of your brain in charge of daydreaming, replaying memories, and worrying about tomorrow.'
+          'They named this the Default Mode Network (DMN). It is the part of your brain in charge of daydreaming, replaying memories, and worrying about tomorrow. Explore the full fMRI brain scan research in our [Clinical Science & Neuroscience Atlas](/clinical-science).'
         ],
         quote: 'Your brain in the dark is like an eager librarian running around trying to organize twenty years of files in five minutes.',
         sideNote: 'fMRI studies show that people who meditate regularly have a much quieter Default Mode Network, allowing them to fall asleep with ease.'
@@ -637,7 +637,7 @@ export const ARTICLES: Article[] = [
           'Answer: Nighttime thoughts skew negative because evolutionary negativity bias causes the idle brain to simulate survival risks and past mistakes to safeguard you against future vulnerabilities.',
           'Why doesn’t your brain lay in bed reminiscing about sunshine and puppies? Why does it obsess over awkward conversations and bills?',
           'Evolution is the culprit. An ancestor who spent quiet nights daydreaming about pretty clouds was less likely to prepare for winter or spot danger. The ancestors who survived were the cautious ones who replayed every hunting mistake so they wouldn’t repeat it.',
-          'Your brain does not review your flaws because it dislikes you. It does it because it is an overprotective bodyguard trying to keep you safe.'
+          'Your brain does not review your flaws because it dislikes you. It does it because it is an overprotective bodyguard trying to keep you safe. Learn why millions use auditory buffers to soothe this bodyguard in [Folio 02: Background Noise for Sleep](/white-noise-addiction).'
         ]
       },
       {
@@ -646,12 +646,12 @@ export const ARTICLES: Article[] = [
         paragraphs: [
           'Answer: You can calm an overactive Default Mode Network by shifting attention from narrative verbal thinking into somatic grounding—such as slow diaphragmatic breathing or brief bedside journaling.',
           'The trick is not to fight your thoughts. When a random worry pops up in the dark, don’t get angry at yourself. Smile and say: "Thanks, brain, I know you’re trying to help. We will handle that tomorrow at 9:00 AM."',
-          'Keep a notepad on your nightstand. If a stubborn thought won’t leave you alone, jot it down in five words. Once your brain knows the thought is safely written on paper, the Default Mode Network relaxes, and sleep arrives.'
+          'Keep a notepad on your nightstand. If a stubborn thought won’t leave you alone, jot it down in five words. Once your brain knows the thought is safely written on paper, the Default Mode Network relaxes, and sleep arrives. For a complete quiet meditation roadmap, follow [Folio 10: Retraining for Quiet](/how-to-enjoy-silence).'
         ]
       }
     ],
     reflectionQuestion: 'When your mind races at night, do you try to fight the thoughts, or can you let them drift past like clouds?',
-    relatedArticleIds: ['sedatephobia-clinical-panic', 'white-noise-addiction', 'how-to-enjoy-silence']
+    relatedArticleIds: ['sedatephobia-clinical-panic', 'white-noise-addiction', 'befriending-the-void']
   },
   {
     id: 'befriending-the-void',
@@ -697,7 +697,7 @@ export const ARTICLES: Article[] = [
         paragraphs: [
           'Answer: A gradual sound diet reduces sensory dependence by transitioning from rapid verbal podcasts to ambient music or nature sounds before attempting complete silence.',
           'If you currently listen to loud talk radio or fast-paced podcasts all day long, jumping straight to dead silence will feel jarring. Your brain is used to a firehose of words.',
-          'Start by tapering down. Replace high-energy podcasts with soft acoustic guitar, ambient rain sounds, or a gentle cello playlist. This removes the chatter while keeping the comforting blanket of sound around you.'
+          'Start by tapering down. Replace high-energy podcasts with soft acoustic guitar, ambient rain sounds, or a gentle cello playlist. This removes the chatter while keeping the comforting blanket of sound around you, as detailed in [Folio 02: Background Noise for Sleep](/white-noise-addiction).'
         ],
         quote: 'Stillness is not something you force. It is a quiet friendship you gently cultivate over time.',
         sideNote: 'Clinical exposure therapy shows that gradual sound reduction builds confidence three times faster than sudden sensory deprivation.'
@@ -708,7 +708,7 @@ export const ARTICLES: Article[] = [
         paragraphs: [
           'Answer: Physical grounding anchors—like holding a warm ceramic mug or feeling your feet firmly on the floor—signal safety to the nervous system, anchoring your awareness in the present moment.',
           'When things get quiet, our heads tend to float away into worries. The best antidote is your physical body.',
-          'Before taking off your headphones, hold a warm mug of tea between your hands. Feel the ceramic warmth. Feel the weight of your feet flat on the floor. Take one slow breath. When your body feels grounded and safe, silence doesn’t feel scary at all.'
+          'Before taking off your headphones, hold a warm mug of tea between your hands. Feel the ceramic warmth. Feel the weight of your feet flat on the floor. Take one slow breath. When your body feels grounded and safe, silence doesn’t feel scary at all. Review why quiet triggers evolutionary panic in [Folio 01: Fear of Silence Explained](/fear-of-silence).'
         ]
       },
       {
@@ -717,7 +717,7 @@ export const ARTICLES: Article[] = [
         paragraphs: [
           'Answer: Sixty seconds of intentional quiet provides direct neural evidence that silence is physically harmless, systematically recalibrating the amygdala’s alarm threshold.',
           'Set a timer for exactly 60 seconds. Sit comfortably. Let the room be quiet. If your chest feels tight or your mind starts chattering, don’t panic. Say to yourself: "I am safe in this room. Nothing is attacking me. This is just quiet air."',
-          'When the timer beeps, notice that you survived! You just gave your brain hard proof that silence is not dangerous.'
+          'When the timer beeps, notice that you survived! You just gave your brain hard proof that silence is not dangerous. You can also evaluate your personal baseline anytime with our [Interactive Silence Vulnerability Quiz](/home#silence-quiz).'
         ]
       },
       {
@@ -726,11 +726,11 @@ export const ARTICLES: Article[] = [
         paragraphs: [
           'Answer: Long-term stillness expands cognitive working memory, lowers baseline sympathetic stress, and transforms quiet from a feared sensory vacuum into a restorative creative sanctuary.',
           'Within two or three weeks of practicing 60-second pauses, something miraculous happens. Quiet stops feeling like an empty trap. It begins to feel like a cozy, spacious room where you can finally rest.',
-          'You no longer carry noise like armor against the world. You step into silence like you’re coming home.'
+          'You no longer carry noise like armor against the world. You step into silence like you’re coming home. Return anytime to the complete [Quietude Monograph Library](/home) or browse our [Search Matrix & Clinical Terminology](/search-keywords).'
         ]
       }
     ],
     reflectionQuestion: 'Are you ready to take just one 60-second quiet breath right now before moving on with your day?',
-    relatedArticleIds: ['sedatephobia-clinical-panic', 'white-noise-addiction', 'racing-mind-at-night']
+    relatedArticleIds: ['sedatephobia-clinical-panic', 'white-noise-addiction', 'default-mode-network']
   }
 ];

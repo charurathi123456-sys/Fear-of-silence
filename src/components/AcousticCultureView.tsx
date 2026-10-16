@@ -163,6 +163,110 @@ export const AcousticCultureView: React.FC<AcousticCultureViewProps> = ({
         </div>
       </section>
 
+      {/* Internal Knowledge Matrix & Connected Research */}
+      <section className="mb-14 p-6 sm:p-8 bg-[#FAF8F5] border border-[#DDD5C5] rounded-2xl book-shadow">
+        <h2 className="font-editorial text-2xl text-[#1C1917] mb-2 font-medium">
+          Where Can You Explore Connected Cultural Folios and Scientific Research?
+        </h2>
+        <p className="font-reading text-sm text-[#5C5346] mb-5 leading-relaxed">
+          <strong className="text-[#936B45]">Answer:</strong> Deepen your exploration of modern acoustic habits and silence phobias through these linked folios and archives:
+        </p>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 text-xs font-sans">
+          <a
+            href="/white-noise-addiction"
+            onClick={(e) => {
+              e.preventDefault();
+              const a = articles.find((art) => art.id === 'white-noise-addiction');
+              if (a) onOpenArticle(a);
+            }}
+            title="Read Folio 02: Background Noise for Sleep"
+            className="p-3.5 bg-[#FCFAF6] border border-[#E7E0D3] hover:border-[#936B45] rounded-xl hover:bg-[#FAF6EE] transition-colors group block"
+          >
+            <span className="font-mono text-[10px] text-[#936B45] uppercase block mb-1">Folio 02</span>
+            <span className="font-medium text-[#1C1917] group-hover:text-[#936B45] block font-editorial text-sm">
+              Background Noise for Sleep
+            </span>
+            <span className="text-[#7A7062] text-[11px] mt-1 block">Why quiet bedrooms keep us awake.</span>
+          </a>
+
+          <a
+            href="/awkward-silence"
+            onClick={(e) => {
+              e.preventDefault();
+              const a = articles.find((art) => art.id === 'awkward-silence-anxiety');
+              if (a) onOpenArticle(a);
+            }}
+            title="Read Folio 03: Awkward Silence Anxiety"
+            className="p-3.5 bg-[#FCFAF6] border border-[#E7E0D3] hover:border-[#936B45] rounded-xl hover:bg-[#FAF6EE] transition-colors group block"
+          >
+            <span className="font-mono text-[10px] text-[#936B45] uppercase block mb-1">Folio 03</span>
+            <span className="font-medium text-[#1C1917] group-hover:text-[#936B45] block font-editorial text-sm">
+              Awkward Silence Anxiety
+            </span>
+            <span className="text-[#7A7062] text-[11px] mt-1 block">Why 4-second conversation pauses terrify us.</span>
+          </a>
+
+          <a
+            href="/silence-in-relationships"
+            onClick={(e) => {
+              e.preventDefault();
+              const a = articles.find((art) => art.id === 'silence-in-relationships-stonewalling');
+              if (a) onOpenArticle(a);
+            }}
+            title="Read Folio 07: Silence in Relationships"
+            className="p-3.5 bg-[#FCFAF6] border border-[#E7E0D3] hover:border-[#936B45] rounded-xl hover:bg-[#FAF6EE] transition-colors group block"
+          >
+            <span className="font-mono text-[10px] text-[#936B45] uppercase block mb-1">Folio 07</span>
+            <span className="font-medium text-[#1C1917] group-hover:text-[#936B45] block font-editorial text-sm">
+              Silence in Relationships
+            </span>
+            <span className="text-[#7A7062] text-[11px] mt-1 block">Peaceful bond versus stonewalling.</span>
+          </a>
+
+          <a
+            href="/screen-noise-addiction"
+            onClick={(e) => {
+              e.preventDefault();
+              const a = articles.find((art) => art.id === 'digital-pacifiers-infinite-scroll');
+              if (a) onOpenArticle(a);
+            }}
+            title="Read Folio 08: Digital Pacifiers and Screen Silence"
+            className="p-3.5 bg-[#FCFAF6] border border-[#E7E0D3] hover:border-[#936B45] rounded-xl hover:bg-[#FAF6EE] transition-colors group block"
+          >
+            <span className="font-mono text-[10px] text-[#936B45] uppercase block mb-1">Folio 08</span>
+            <span className="font-medium text-[#1C1917] group-hover:text-[#936B45] block font-editorial text-sm">
+              Digital Pacifiers & Screen Silence
+            </span>
+            <span className="text-[#7A7062] text-[11px] mt-1 block">Why we reach for phones in quiet rooms.</span>
+          </a>
+
+          <a
+            href="/clinical-science"
+            title="Explore Clinical Science and Brain Research"
+            className="p-3.5 bg-[#FCFAF6] border border-[#E7E0D3] hover:border-[#936B45] rounded-xl hover:bg-[#FAF6EE] transition-colors group block"
+          >
+            <span className="font-mono text-[10px] text-[#936B45] uppercase block mb-1">Pillar Page</span>
+            <span className="font-medium text-[#1C1917] group-hover:text-[#936B45] block font-editorial text-sm">
+              Clinical Science & Neuroscience Atlas
+            </span>
+            <span className="text-[#7A7062] text-[11px] mt-1 block">Neurological anatomy of sedatephobia.</span>
+          </a>
+
+          <a
+            href="/home"
+            title="Return to Quietude Homepage Archive"
+            className="p-3.5 bg-[#FCFAF6] border border-[#E7E0D3] hover:border-[#936B45] rounded-xl hover:bg-[#FAF6EE] transition-colors group block"
+          >
+            <span className="font-mono text-[10px] text-[#936B45] uppercase block mb-1">Archive</span>
+            <span className="font-medium text-[#1C1917] group-hover:text-[#936B45] block font-editorial text-sm">
+              Quietude Monograph Library
+            </span>
+            <span className="text-[#7A7062] text-[11px] mt-1 block">Browse the complete 10-folio journal.</span>
+          </a>
+        </div>
+      </section>
+
       {/* Bottom Practice Invitation */}
       <section className="p-8 bg-[#FAF8F5] border border-[#DDD5C5] rounded-2xl flex flex-col sm:flex-row items-center justify-between gap-6 book-shadow">
         <div className="space-y-1 text-center sm:text-left">
