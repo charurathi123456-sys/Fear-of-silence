@@ -12,6 +12,7 @@ export interface ArticleImage {
   fileName: string;
   caption: string;
   seoTarget: string;
+  fileSizeKb?: number;
 }
 
 export interface Article {
